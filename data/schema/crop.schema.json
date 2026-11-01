@@ -1,0 +1,282 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gro.ng/schema/crop.schema.json",
+  "title": "GRO crop record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "scientificName",
+    "category",
+    "localNames",
+    "description",
+    "agroEcologies",
+    "states",
+    "statesProvenance",
+    "difficulty",
+    "climate",
+    "soil",
+    "planting",
+    "water",
+    "nutrition",
+    "pestsAndDiseases",
+    "harvest",
+    "postHarvest",
+    "safety",
+    "practices",
+    "openQuestions",
+    "sources",
+    "review"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "name": { "type": "string", "minLength": 2 },
+    "scientificName": { "type": "string", "minLength": 3 },
+    "category": {
+      "enum": [
+        "Leafy Vegetables",
+        "Vegetables",
+        "Legumes",
+        "Grains & Oilseeds",
+        "Roots & Tubers",
+        "Fruits & Trees",
+        "Herbs & Spices"
+      ]
+    },
+    "localNames": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "language"],
+        "properties": {
+          "name": { "type": "string" },
+          "language": { "type": "string" }
+        }
+      }
+    },
+    "description": { "type": "string", "minLength": 40 },
+    "agroEcologies": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    },
+    "states": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    },
+    "statesProvenance": { "$ref": "#/$defs/provenance" },
+    "difficulty": { "enum": ["Easy", "Moderate", "Advanced"] },
+    "climate": { "$ref": "#/$defs/section" },
+    "soil": { "$ref": "#/$defs/section" },
+    "planting": { "$ref": "#/$defs/section" },
+    "water": { "$ref": "#/$defs/section" },
+    "nutrition": { "$ref": "#/$defs/section" },
+    "pestsAndDiseases": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["problems", "ipmFirst", "sourceIds"],
+      "properties": {
+        "problems": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "kind", "control", "sourceIds"],
+            "properties": {
+              "name": { "type": "string" },
+              "kind": { "enum": ["pest", "disease", "disorder"] },
+              "control": { "type": "string" },
+              "sourceIds": { "$ref": "#/$defs/sourceIds" }
+            }
+          }
+        },
+        "ipmFirst": { "type": "string", "minLength": 20 },
+        "sourceIds": { "$ref": "#/$defs/sourceIds" }
+      }
+    },
+    "harvest": { "$ref": "#/$defs/section" },
+    "postHarvest": { "$ref": "#/$defs/section" },
+    "varieties": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "status", "sourceIds"],
+        "properties": {
+          "name": { "type": "string" },
+          "status": { "enum": ["NASC-released", "landrace", "unknown"] },
+          "traits": { "type": "string" },
+          "sourceIds": { "$ref": "#/$defs/sourceIds" }
+        }
+      }
+    },
+    "economics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["caveat", "sourceIds"],
+      "properties": {
+        "totalCostNaira": { "type": "number" },
+        "totalRevenueNaira": { "type": "number" },
+        "netReturnNaira": { "type": "number" },
+        "benefitCostRatio": { "type": "number" },
+        "meanFarmSizeHa": { "type": "number" },
+        "location": { "type": "string" },
+        "dataYear": { "type": "integer" },
+        "caveat": { "type": "string", "minLength": 30 },
+        "sourceIds": { "$ref": "#/$defs/sourceIds" }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pesticidePolicy", "ppe", "preHarvestInterval", "bannedInputsNote"],
+      "properties": {
+        "pesticidePolicy": { "type": "string", "minLength": 40 },
+        "ppe": { "type": "string" },
+        "preHarvestInterval": { "type": "string" },
+        "bannedInputsNote": { "type": "string" },
+        "wastewaterWarning": { "type": "string" }
+      }
+    },
+    "practices": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/practice" }
+    },
+    "openQuestions": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 15 }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/source" }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reviewedAt", "reviewedBy", "nextReview", "season", "pesticideCheckedAt"],
+      "properties": {
+        "reviewedAt": { "type": "string", "format": "date" },
+        "reviewedBy": { "type": "string" },
+        "nextReview": { "type": "string", "format": "date" },
+        "season": { "type": "string" },
+        "pesticideCheckedAt": { "type": "string", "format": "date" }
+      }
+    }
+  },
+  "$defs": {
+    "sourceIds": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["basis", "confidence"],
+      "properties": {
+        "basis": {
+          "enum": ["research", "extension", "farmer", "traditional", "editorial"]
+        },
+        "confidence": { "enum": ["high", "medium", "low"] },
+        "sourceIds": { "type": "array", "items": { "type": "string" } },
+        "note": { "type": "string" }
+      }
+    },
+    "section": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["sourceIds"],
+      "properties": {
+        "sourceIds": { "$ref": "#/$defs/sourceIds" },
+        "confidence": { "enum": ["high", "medium", "low"] },
+        "caveat": { "type": "string" },
+        "note": { "type": "string" }
+      }
+    },
+    "practice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim", "type", "grade", "confidence", "sourceIds"],
+      "properties": {
+        "claim": { "type": "string", "minLength": 20 },
+        "type": {
+          "enum": ["research", "extension", "farmer", "traditional", "editorial"]
+        },
+        "grade": { "enum": ["A", "B", "C", "D", "E"] },
+        "confidence": { "enum": ["high", "medium", "low"] },
+        "context": { "type": "string" },
+        "sourceIds": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string" }
+        },
+        "attribution": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "state", "recordedAt", "consent"],
+          "properties": {
+            "name": { "type": "string" },
+            "pseudonym": { "type": "boolean" },
+            "state": { "type": "string" },
+            "farmSizeHa": { "type": "number" },
+            "season": { "type": "string" },
+            "recordedAt": { "type": "string", "format": "date" },
+            "consent": { "const": true },
+            "outcome": { "type": "string" }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "type": { "const": "farmer" } } },
+          "then": { "required": ["attribution"] }
+        }
+      ]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "publisher",
+        "year",
+        "url",
+        "type",
+        "accessed"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "title": { "type": "string" },
+        "short": { "type": "string" },
+        "authors": { "type": "string" },
+        "publisher": { "type": "string" },
+        "year": { "type": ["integer", "string"] },
+        "url": { "type": "string", "pattern": "^https://" },
+        "doi": { "type": "string" },
+        "type": {
+          "enum": [
+            "peer-reviewed",
+            "government",
+            "institutional",
+            "ngo",
+            "farmer-network",
+            "dataset",
+            "regulator"
+          ]
+        },
+        "accessed": { "type": "string", "format": "date" },
+        "note": { "type": "string" },
+        "license": { "type": "string" }
+      }
+    }
+  }
+}

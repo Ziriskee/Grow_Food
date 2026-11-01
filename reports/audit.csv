@@ -1,0 +1,113 @@
+id,name,category,n_states,unknown_states,duplicate_states,empty_fields,has_source,numbers
+ugu,Fluted Pumpkin,Leafy Vegetables,18,,,,False,25
+bitterleaf,Bitterleaf,Leafy Vegetables,19,,,,False,12
+ewedu,Ewedu (Jute Mallow),Leafy Vegetables,24,,,,False,13
+waterleaf,Waterleaf,Leafy Vegetables,17,,,,True,14
+efo-tete,African Spinach (Green Amaranth),Leafy Vegetables,28,,,,False,10
+soko,Lagos Spinach (Soko),Leafy Vegetables,17,,,,False,11
+scent-leaf,Scent Leaf,Leafy Vegetables,20,,,,False,8
+uziza-leaf,Uziza Leaf,Leafy Vegetables,14,,,,False,10
+utazi,Utazi,Leafy Vegetables,12,,,,False,10
+okazi,Okazi / Afang Leaf,Leafy Vegetables,12,,,,False,7
+editan,Editan Leaf,Leafy Vegetables,6,,,,False,7
+atama,Atama Leaf,Leafy Vegetables,8,,,,False,6
+ebolo,Ebolo (Fireweed),Leafy Vegetables,17,,,,False,7
+yanrin,Yanrin (Wild Lettuce),Leafy Vegetables,15,,,,False,6
+roselle-leaf,Roselle Leaves (Zobo),Leafy Vegetables,20,,,,False,15
+moringa,Moringa Leaves,Leafy Vegetables,30,,,,False,15
+african-nightshade,African Nightshade,Leafy Vegetables,18,,,,False,10
+amunututu,Amunututu (Malabar Spinach),Leafy Vegetables,18,,,,False,11
+okra,Okra,Vegetables,37,,,,False,14
+garden-egg,Garden Egg (African Eggplant),Vegetables,21,,,,False,10
+egusi,Egusi Melon,Vegetables,23,,,,False,9
+ogili-melon,White Melon (Ogili),Vegetables,12,,,,False,7
+scotch-bonnet,Scotch Bonnet (Ata Rodo),Vegetables,22,,,,False,9
+shombo,Cayenne Pepper (Shombo),Vegetables,24,,,,False,9
+tatashe,Tatashe (Sweet Pepper),Vegetables,22,,,,False,9
+tomato,Tomato,Vegetables,25,,,,False,10
+onion,Onion,Vegetables,16,,,,False,11
+cucumber,Cucumber,Vegetables,20,,,,False,10
+roselle-calyx,Roselle Calyx (Zobo),Vegetables,20,,,,False,13
+local-pumpkin,Local Pumpkin (Elegede),Vegetables,22,,,,False,7
+bitter-gourd,African Cucumber (Bitter Gourd),Vegetables,20,,,,False,8
+snake-tomato,Snake Tomato,Vegetables,17,,,,False,7
+cowpea,Cowpea,Legumes,23,,,,False,12
+bambara,Bambara Groundnut,Legumes,18,,,,False,8
+african-yam-bean,African Yam Bean,Legumes,14,,,,True,8
+groundnut,Groundnut,Legumes,20,,,,False,10
+pigeon-pea,Pigeon Pea,Legumes,17,,,,False,7
+soybean,Soybean,Legumes,17,,,,False,9
+lima-bean,Lima Bean,Legumes,15,,,,False,6
+kersting-groundnut,Kersting\u2019s Groundnut,Legumes,12,,,,False,6
+jack-bean,Jack Bean / Sword Bean,Legumes,16,,,,False,6
+mucuna,Mucuna (Velvet Bean),Legumes,17,,,,True,6
+sorghum,Sorghum (Guinea Corn),Grains & Oilseeds,20,,,,False,12
+pearl-millet,Pearl Millet,Grains & Oilseeds,16,,,,False,8
+finger-millet,Finger Millet,Grains & Oilseeds,10,,,,False,6
+fonio,Fonio (Acha),Grains & Oilseeds,12,,,,False,4
+black-fonio,Black Fonio (Iburu),Grains & Oilseeds,7,,,,False,4
+african-rice,African Rice (Oryza glaberrima),Grains & Oilseeds,18,,,,False,11
+asian-rice,Asian Rice,Grains & Oilseeds,22,,,,False,10
+maize,Maize,Grains & Oilseeds,26,,,,False,13
+sesame,Sesame (Beniseed),Grains & Oilseeds,18,,,,False,7
+sunflower,Sunflower,Grains & Oilseeds,14,,,,False,7
+wheat,Wheat,Grains & Oilseeds,15,,,,False,8
+cotton,Cotton,Grains & Oilseeds,19,,,,False,12
+white-yam,White Yam,Roots & Tubers,22,,,,False,16
+water-yam,Water Yam,Roots & Tubers,19,,,,False,9
+yellow-yam,Yellow Yam,Roots & Tubers,12,,,,False,10
+aerial-yam,Aerial Yam,Roots & Tubers,16,,,,False,6
+trifoliate-yam,Trifoliate Yam,Roots & Tubers,14,,,,False,7
+chinese-yam,Chinese Yam,Roots & Tubers,10,,,,False,7
+cassava,Cassava,Roots & Tubers,28,,Ogun,,False,13
+sweet-potato,Sweet Potato,Roots & Tubers,20,,,,False,11
+taro,Taro (Cocoyam),Roots & Tubers,18,,,,False,10
+tannia,Tannia (Cocoyam),Roots & Tubers,16,,,,False,9
+irish-potato,Irish Potato,Roots & Tubers,6,,,,False,12
+tigernut,Tigernut,Roots & Tubers,19,,,,False,9
+hausa-potato,Hausa Potato (Rizga),Roots & Tubers,7,,,,False,8
+livingstone-potato,Livingstone Potato,Roots & Tubers,8,,,,False,8
+agbalumo,African Star Apple,Fruits & Trees,18,,,,False,7
+african-pear,African Pear (Ube),Fruits & Trees,12,,,,False,7
+ukwa,African Breadfruit,Fruits & Trees,12,,,,False,6
+bush-mango,Bush Mango (Ogbono),Fruits & Trees,12,,,,False,4
+velvet-tamarind,Velvet Tamarind,Fruits & Trees,20,,,,False,4
+monkey-kola,Monkey Kola,Fruits & Trees,9,,,,False,4
+baobab,Baobab,Fruits & Trees,19,,,,False,4
+kola-nut,Kola Nut,Fruits & Trees,14,,,,False,6
+bitter-kola,Bitter Kola,Fruits & Trees,12,,,,False,4
+cocoa,Cocoa,Fruits & Trees,11,,,,False,10
+cashew,Cashew,Fruits & Trees,18,,,,False,7
+mango,Mango,Fruits & Trees,22,,,,False,5
+guava,Guava,Fruits & Trees,21,,,,False,5
+pawpaw,Pawpaw / Papaya,Fruits & Trees,26,,,,False,10
+banana,Banana,Fruits & Trees,22,,,,False,10
+plantain,Plantain,Fruits & Trees,20,,,,False,10
+pineapple,Pineapple,Fruits & Trees,20,,,,False,10
+sweet-orange,Sweet Orange,Fruits & Trees,20,,,,False,4
+tangerine,Tangerine,Fruits & Trees,16,,,,False,5
+coconut,Coconut,Fruits & Trees,9,,,,False,6
+oil-palm,Oil Palm,Fruits & Trees,19,,,,False,6
+raffia-palm,Raffia Palm,Fruits & Trees,8,,,,False,3
+date-palm,Date Palm,Fruits & Trees,11,,,,False,4
+doum-palm,Doum Palm,Fruits & Trees,11,,,,False,4
+soursop,Soursop,Fruits & Trees,18,,,,False,6
+avocado,Avocado,Fruits & Trees,14,,,,False,6
+tamarind,Tamarind,Fruits & Trees,20,,,,False,5
+shea,Shea Tree,Fruits & Trees,13,,,,False,4
+african-walnut,African Walnut,Fruits & Trees,11,,,,False,4
+black-plum,Black Plum (Dinya),Fruits & Trees,14,,,,False,4
+desert-date,Desert Date,Fruits & Trees,11,,,,False,4
+sugarcane,Sugarcane,Fruits & Trees,29,,,,False,9
+uziza-seed,Uziza Seed (West African Pepper),Herbs & Spices,10,,,,False,4
+uda,Negro Pepper (Uda),Herbs & Spices,14,,,,False,4
+ehuru,African Nutmeg (Ehuru),Herbs & Spices,10,,,,False,4
+ata-ire,Alligator Pepper (Grains of Paradise),Herbs & Spices,12,,,,False,4
+iru,African Locust Bean (Iru/Dawadawa),Herbs & Spices,20,,,,False,5
+ginger,Ginger,Herbs & Spices,15,,,,False,14
+turmeric,Turmeric,Herbs & Spices,17,,,,False,10
+garlic,Garlic,Herbs & Spices,15,,,,False,11
+aridan,Aidan Fruit (Aridan),Herbs & Spices,13,,,,False,4
+lemongrass,Lemongrass,Herbs & Spices,21,,,,False,8
+bird-eye-chili,Bird\u2019s Eye Chilli,Herbs & Spices,23,,,,False,9
+curry-leaf,Curry Leaf,Herbs & Spices,21,,,,False,7

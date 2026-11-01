@@ -1,0 +1,289 @@
+{
+  "id": "ugu",
+  "name": "Fluted Pumpkin",
+  "scientificName": "Telfairia occidentalis Hook.f.",
+  "category": "Leafy Vegetables",
+  "localNames": [
+    { "name": "Ugu", "language": "Igbo" },
+    { "name": "Ugwu", "language": "Igbo" }
+  ],
+  "description": "A vigorous climbing vine grown for iron-rich dark leaves and protein-rich seeds. It is one of Nigeria's most widely eaten indigenous vegetables, and the seeds are milled into egusi. It is dioecious, so some vines never bear pods.",
+  "agroEcologies": ["Humid forest", "Derived savanna"],
+  "states": [
+    "Enugu",
+    "Anambra",
+    "Imo",
+    "Abia",
+    "Ebonyi",
+    "Cross River",
+    "Akwa Ibom",
+    "Rivers",
+    "Delta",
+    "Edo",
+    "Ondo",
+    "Ekiti",
+    "Benue",
+    "Kogi",
+    "Osun",
+    "Oyo",
+    "Ogun",
+    "Lagos"
+  ],
+  "statesProvenance": {
+    "basis": "editorial",
+    "confidence": "medium",
+    "note": "Compiled from the crop's established growing belt and state lists already on the site. State-level suitability has not yet been confirmed with each ADP; treat as a starting list, not a guarantee."
+  },
+  "difficulty": "Easy",
+  "climate": {
+    "note": "Grown all year. The rainfed crop runs roughly March to November; the dry-season crop runs November to March under irrigation, or on residual moisture in valley bottoms.",
+    "sourceIds": ["nihort-ugu"],
+    "confidence": "high"
+  },
+  "soil": {
+    "texture": "Moist, well-drained, fertile soil; responds strongly to organic matter.",
+    "ph": [6.0, 7.5],
+    "note": "NIHORT gives pH 6.0-7.5. The old GRO record said 5.5-6.8; that figure was not sourced and is corrected here.",
+    "sourceIds": ["nihort-ugu"],
+    "confidence": "high"
+  },
+  "planting": {
+    "seedRatePerHa": [10000, 20000],
+    "nursery": "Sow in beds under shade or in nursery trays, 30-50 cm between rows on beds or 10-15 cm in trays. Transplant at the 6-leaf stage, when the vine is about 70 mm.",
+    "transplantAgeWeeks": [2, 4],
+    "spacings": [
+      {
+        "system": "Rainfed, staked",
+        "cm": [100, 100],
+        "plantsPerHa": 10000,
+        "sourceIds": ["nihort-ugu"]
+      },
+      {
+        "system": "Dry season, valley bottom, unstaked",
+        "cm": [50, 30],
+        "plantsPerHa": 65000,
+        "sourceIds": ["nihort-ugu"]
+      }
+    ],
+    "note": "Seed rate is 10,000-20,000 seeds per hectare depending on target plant density. The dry-season system is a different crop technically: dense, unstaked, short-cycle.",
+    "sourceIds": ["nihort-ugu"],
+    "confidence": "high"
+  },
+  "water": {
+    "note": "Rainfed crop depends on steady rainfall. Dry-season production uses irrigation, residual moisture in valley bottoms, or streams. Do not assume the crop needs twice-weekly watering in all systems; that depends on soil and season.",
+    "sourceIds": ["nihort-ugu", "okigwe-profitability-2022"],
+    "confidence": "medium"
+  },
+  "nutrition": {
+    "poultryManureTPerHa": 20,
+    "nitrogenKgPerHa": [80, 90],
+    "expectedVineYieldTPerHa": 10,
+    "note": "Apply about 20 t/ha of poultry manure before planting. Where that is not practical, apply 25-50% pre-plant and supply the rest with a split NPK top-dress. Two split applications of 80-90 kg N/ha have given about 10 t/ha of vine. These are per-hectare figures: scale to the plot, and do not copy them to a 0.1 ha garden.",
+    "sourceIds": ["nihort-ugu"],
+    "confidence": "high"
+  },
+  "pestsAndDiseases": {
+    "problems": [
+      {
+        "name": "White leaf spot",
+        "kind": "disease",
+        "control": "Stake early so leaves stay off the soil, remove badly infected leaves, avoid overhead watering, and rotate away from cucurbits.",
+        "sourceIds": ["nihort-ugu"]
+      },
+      {
+        "name": "Root-knot nematodes",
+        "kind": "pest",
+        "control": "Use healthy seed, rotate with cereals, add organic matter, and destroy infected roots. NIHORT's guide lists carbofuran (Furadan) for this; it is banned in Nigeria and must not be used.",
+        "sourceIds": ["nihort-ugu", "nafdac-2023"]
+      }
+    ],
+    "ipmFirst": "Start with staking, clean seed, rotation and sanitation. The old guide's chemical list is not a safe default: check every active ingredient against NAFDAC before publication, and prefer cultural control on a small plot.",
+    "sourceIds": ["nihort-ugu", "nafdac-2023"]
+  },
+  "harvest": {
+    "firstHarvestWeeks": 5,
+    "intervalWeeks": [3, 4],
+    "cutHeightAboveNodeCm": 5,
+    "podMaturityDaysFromFlowering": [90, 115],
+    "seedViabilityMonthsInPod": [3, 5],
+    "fridgeSeedStorageWeeks": 3,
+    "note": "Cut vines with a clean knife about 5 cm above a node so the plant can sprout again; leave enough leaves to support regrowth. Harvest in the early morning or late evening while plants are turgid. Pods mature 90-115 days after flowering; seed kept in the pod stays viable 3-5 months, or about 3 weeks in the lower fridge compartment.",
+    "sourceIds": ["nihort-ugu"],
+    "confidence": "high"
+  },
+  "postHarvest": {
+    "note": "Keep bundles cool and damp, out of the sun, and transport under the same conditions. Do not wash before storage. Harvest only what you can sell or eat within a few days; leafy ugu wilts fast.",
+    "sourceIds": ["nihort-ugu"],
+    "confidence": "medium"
+  },
+  "safety": {
+    "pesticidePolicy": "No pesticide is recommended on this page. If a pest problem justifies a chemical, use only a product registered by NAFDAC for that crop on the date of use, follow the label dose, wear the stated PPE, and observe the pre-harvest interval. Re-check registration before every season.",
+    "ppe": "Long sleeves, trousers, gloves, boots, eye protection and a nose/mouth cover when handling or spraying any agrochemical. Wash work clothes separately and bathe after spraying.",
+    "preHarvestInterval": "Follow the product label. Never harvest leaves inside the stated interval; leafy crops are eaten raw or lightly cooked and residues are not removed by washing.",
+    "bannedInputsNote": "Carbofuran (Furadan), paraquat, atrazine and chlorpyrifos are banned or phased out by NAFDAC. Banned products still circulate in markets, so buy only from a licensed dealer and check the label.",
+    "wastewaterWarning": "A 2022 Okigwe survey found 26.7% of dry-season growers irrigating with wastewater. That is a food-safety risk for a leaf crop eaten fresh; do not present it as a recommendation."
+  },
+  "practices": [
+    {
+      "claim": "The rainfed crop is planted with the rains (roughly March-November); dry-season ugu is grown November-March under irrigation or in valley bottoms.",
+      "type": "extension",
+      "grade": "B",
+      "confidence": "high",
+      "sourceIds": ["nihort-ugu"]
+    },
+    {
+      "claim": "Stake after the first cut, about 4-6 weeks after planting, and drive stakes at least 30 cm into the soil. Staking keeps leaves off the soil, reduces white leaf spot, and makes harvesting easier.",
+      "type": "extension",
+      "grade": "B",
+      "confidence": "high",
+      "sourceIds": ["nihort-ugu"]
+    },
+    {
+      "claim": "Do not treat scattered early rains in southern Nigeria as the start of the season. NiMet's 2026 forecast warns that early rains are not onset and gives state-level onset dates.",
+      "type": "extension",
+      "grade": "A",
+      "confidence": "high",
+      "context": "2026 season, national forecast",
+      "sourceIds": ["nimet-2026"]
+    },
+    {
+      "claim": "Most smallholder ugu in the southeast is grown by women on farms averaging about 0.7 ha, and the crop is profitable but inputs are used inefficiently: labour, seed and manure tend to be over-applied while land and capital are under-used.",
+      "type": "research",
+      "grade": "C",
+      "confidence": "medium",
+      "context": "n = 400 farms, southeast Nigeria, 2023 study",
+      "sourceIds": ["se-efficiency-2023"]
+    },
+    {
+      "claim": "In Enugu, 63% of ugu farmers had no extension contact in the previous year, and most sold through village or local markets (56.9%), village squares (27.6%) and roadside stands (16.2%); only 3.6% sold through cooperatives.",
+      "type": "research",
+      "grade": "C",
+      "confidence": "medium",
+      "context": "n = 160 farmers, Enugu State, 2013 survey",
+      "sourceIds": ["enugu-extension-2013"]
+    },
+    {
+      "claim": "Dry-season ugu in Okigwe was profitable in 2021/22, but growers depended on streams and wastewater for irrigation and faced high input costs, poor roads and no irrigation facilities.",
+      "type": "research",
+      "grade": "C",
+      "confidence": "medium",
+      "context": "Okigwe, Imo State, 2022 profitability study",
+      "sourceIds": ["okigwe-profitability-2022"]
+    },
+    {
+      "claim": "NIHORT's ugu guide still recommends Furadan (carbofuran) for nematodes. NAFDAC banned carbofuran outright in 2023, so that section of the guide must not be copied.",
+      "type": "editorial",
+      "grade": "A",
+      "confidence": "high",
+      "sourceIds": ["nihort-ugu", "nafdac-2023"]
+    }
+  ],
+  "economics": {
+    "totalCostNaira": 163005,
+    "totalRevenueNaira": 338340,
+    "netReturnNaira": 175335,
+    "benefitCostRatio": 2.08,
+    "meanFarmSizeHa": 0.54,
+    "location": "Okigwe, Imo State",
+    "dataYear": 2022,
+    "caveat": "Reported per farm for one dry season (mean farm 0.54 ha). Naira values are from 2022 and are not current prices. Use the method, not the number: recalculate with today's input and market prices.",
+    "sourceIds": ["okigwe-profitability-2022"]
+  },
+  "openQuestions": [
+    "Do southeast growers cut at 5 cm above a node, or leave 30 cm as the old GRO page said? Measure regrowth on both in the 2027 season.",
+    "Which staking method (single stake, tripod, trellis, table) gives the best labour return at 0.25-0.5 ha?",
+    "How much does bamboo stake replacement actually cost per season, and is there a cheaper local material?",
+    "Does wastewater irrigation change leaf contamination levels enough to justify a public warning beyond the survey finding?",
+    "Which local seed sources give reliable germination, and what is the real cost per 1,000 viable seeds?"
+  ],
+  "sources": [
+    {
+      "id": "nihort-ugu",
+      "title": "Production guide on Fluted Pumpkin - Telfairia occidentalis (Ugu)",
+      "short": "NIHORT 2020",
+      "publisher": "National Horticultural Research Institute (NIHORT), Ibadan",
+      "year": 2020,
+      "url": "https://nihort.gov.ng/wp-content/uploads/2020/12/PRODUCTION-GUIDE-OF-TELFAIRIA.pdf",
+      "type": "government",
+      "accessed": "2026-10-31",
+      "note": "Primary Nigerian agronomy source. Its pesticide section predates the NAFDAC bans and must not be reproduced."
+    },
+    {
+      "id": "nafdac-2023",
+      "title": "Ban, phase-out and reclassification of pesticides",
+      "short": "NAFDAC 2023",
+      "publisher": "National Agency for Food and Drug Administration and Control (NAFDAC)",
+      "year": 2023,
+      "url": "https://nafdac.gov.ng/revised-press-release-by-dg-on-the-ban-phase-out-and-reclassification-of-pesticides",
+      "type": "regulator",
+      "accessed": "2026-10-31",
+      "note": "Carbofuran banned immediately; paraquat from 1 Jan 2024; chlorpyrifos from 1 Nov 2024; atrazine from 1 Jan 2025."
+    },
+    {
+      "id": "nafdac-2026",
+      "title": "NAFDAC reaffirms commitment to curb illegal pesticides",
+      "short": "NAFDAC 2026",
+      "publisher": "NAFDAC",
+      "year": 2026,
+      "url": "https://nafdac.gov.ng/nafdac-dg-reaffirms-commitment-to-curb-illegal-pesticides-protect-food-safety-and-safeguard-nigerias-agricultural-future/",
+      "type": "regulator",
+      "accessed": "2026-10-31",
+      "note": "Documents continued circulation of banned paraquat and atrazine after the ban."
+    },
+    {
+      "id": "nimet-2026",
+      "title": "2026 Seasonal Climate Prediction",
+      "short": "NiMet 2026",
+      "publisher": "Nigerian Meteorological Agency (NiMet)",
+      "year": 2026,
+      "url": "https://nimet.gov.ng/news?id=194",
+      "type": "government",
+      "accessed": "2026-10-31",
+      "note": "State-level onset, cessation, dry spells and the August break. Valid for the 2026 season only."
+    },
+    {
+      "id": "enugu-extension-2013",
+      "title": "Agricultural extension needs of farmers in Telfairia production and marketing in Enugu State, Nigeria",
+      "short": "J. Agric. Extension 2013",
+      "authors": "Journal of Agricultural Extension, 17(1)",
+      "publisher": "African Journals Online (AJOL)",
+      "year": 2013,
+      "url": "https://doi.org/10.4314/jae.v17i1.5",
+      "doi": "10.4314/jae.v17i1.5",
+      "type": "peer-reviewed",
+      "accessed": "2026-10-31",
+      "note": "n = 160; survey of production and marketing channels."
+    },
+    {
+      "id": "okigwe-profitability-2022",
+      "title": "Profitability analysis of dry season fluted pumpkin production among smallholder farmers in Okigwe, southeastern Nigeria",
+      "short": "JAAT 2022",
+      "publisher": "Journal of Agriculture and Agricultural Technology (JAAT)",
+      "year": 2022,
+      "url": "https://doi.org/10.33003/jaat.2022.0801.069",
+      "doi": "10.33003/jaat.2022.0801.069",
+      "type": "peer-reviewed",
+      "accessed": "2026-10-31",
+      "note": "Costs, returns, water sources and constraints for one dry season."
+    },
+    {
+      "id": "se-efficiency-2023",
+      "title": "Efficiency use of resources and profitability of ugu (fluted pumpkin) production among small-scale farmers in southeast Nigeria",
+      "short": "JAAT 2023",
+      "publisher": "Journal of Agriculture and Agricultural Technology (JAAT)",
+      "year": 2023,
+      "url": "https://doi.org/10.33003/jaat.2023.0903.19",
+      "doi": "10.33003/jaat.2023.0903.19",
+      "type": "peer-reviewed",
+      "accessed": "2026-10-31",
+      "note": "n = 400; farm size, gender, resource-use efficiency."
+    }
+  ],
+  "review": {
+    "reviewedAt": "2026-10-31",
+    "reviewedBy": "GRO editorial",
+    "nextReview": "2027-10-31",
+    "season": "2026",
+    "pesticideCheckedAt": "2026-10-31"
+  }
+}

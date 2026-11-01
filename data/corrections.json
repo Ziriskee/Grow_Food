@@ -1,0 +1,40 @@
+{
+  "corrections": [
+    {
+      "date": "2026-10-31",
+      "cropId": "ugu",
+      "field": "soil.ph",
+      "old": "5.5-6.8",
+      "new": "6.0-7.5",
+      "reason": "The old figure had no source and disagrees with NIHORT's ugu production guide.",
+      "sourceIds": ["nihort-ugu"]
+    },
+    {
+      "date": "2026-10-31",
+      "cropId": "ugu",
+      "field": "harvest.cutHeight",
+      "old": "leave 30 cm of stem when cutting",
+      "new": "cut about 5 cm above a node",
+      "reason": "Leaving 30 cm removes most of the regrowing stem and is not what NIHORT recommends.",
+      "sourceIds": ["nihort-ugu"]
+    },
+    {
+      "date": "2026-10-31",
+      "cropId": "ugu",
+      "field": "planting.spacing",
+      "old": "1 m x 1 m for leaves; 2 m x 1 m for seed",
+      "new": "1 m x 1 m rainfed (10,000 plants/ha); 0.5 m x 0.3 m dry season (65,000 plants/ha)",
+      "reason": "The seed-production spacing was unsourced; the dry-season system was missing entirely.",
+      "sourceIds": ["nihort-ugu"]
+    },
+    {
+      "date": "2026-10-31",
+      "cropId": "ugu",
+      "field": "nutrition",
+      "old": "NPK 15:15:15 at 200 kg/ha plus urea after each cutting",
+      "new": "20 t/ha poultry manure, or 25-50% pre-plant plus split NPK; 80-90 kg N/ha split",
+      "reason": "Replaced an unsourced blanket rate with NIHORT's per-hectare recommendation and a scaling caveat.",
+      "sourceIds": ["nihort-ugu"]
+    }
+  ]
+}

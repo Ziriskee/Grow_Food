@@ -1,0 +1,227 @@
+@import "tailwindcss";
+
+/*
+  Theme switching is attribute based, not media-query based: the site ships
+  dark, and `[data-theme="light"]` on <html> is the opt-in. `dark:` therefore
+  has to follow the attribute rather than the OS setting.
+*/
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/*
+  Palette tokens.
+
+  Dark is the default. Light keeps the paper-and-ink values from the first
+  build. Note the inversion of `moss`: in light it is the dark green that
+  carries `text-paper` on primary buttons, in dark it becomes a pale sage so
+  the same utility pair still reads. Every component uses these names only.
+*/
+:root {
+  color-scheme: dark;
+
+  --pg-paper: #0c110e;
+  --pg-paper-raised: #141b16;
+  --pg-ink: #edf1e8;
+  --pg-ink-soft: #b4bfae;
+  --pg-ink-faint: #929c8c;
+  --pg-moss: #b6d2ab;
+  --pg-moss-soft: #86a97f;
+  --pg-clay: #e6a67e;
+  --pg-clay-soft: #d29a74;
+  --pg-hairline: #26312a;
+
+  --pg-inset: rgba(255, 255, 255, 0.07);
+  --pg-glow: rgba(150, 200, 150, 0.13);
+  --pg-selection: #2c4434;
+  --pg-grain-blend: screen;
+  --pg-grain-opacity: 0.05;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  --pg-paper: #f5f1e8;
+  --pg-paper-raised: #fbf8f2;
+  --pg-ink: #1b201b;
+  --pg-ink-soft: #4c544a;
+  --pg-ink-faint: #656d5e;
+  --pg-moss: #2c4030;
+  --pg-moss-soft: #5b7357;
+  --pg-clay: #a4512c;
+  --pg-clay-soft: #c07c57;
+  --pg-hairline: #e0d8c6;
+
+  --pg-inset: rgba(255, 255, 255, 0.9);
+  --pg-glow: rgba(44, 64, 48, 0.12);
+  --pg-selection: #ded0ae;
+  --pg-grain-blend: multiply;
+  --pg-grain-opacity: 0.04;
+}
+
+@theme inline {
+  --color-paper: var(--pg-paper);
+  --color-paper-raised: var(--pg-paper-raised);
+  --color-ink: var(--pg-ink);
+  --color-ink-soft: var(--pg-ink-soft);
+  --color-ink-faint: var(--pg-ink-faint);
+  --color-moss: var(--pg-moss);
+  --color-moss-soft: var(--pg-moss-soft);
+  --color-clay: var(--pg-clay);
+  --color-clay-soft: var(--pg-clay-soft);
+  --color-hairline: var(--pg-hairline);
+
+  --font-display: var(--font-fraunces), ui-serif, Georgia, "Times New Roman", serif;
+  --font-body: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
+
+  --ease-editorial: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    background-color: var(--pg-paper);
+  }
+
+  body {
+    background-color: var(--pg-paper);
+    color: var(--pg-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* The attribute flip should feel like a dimmer, not a cut. */
+  body,
+  .theme-surface {
+    transition:
+      background-color 0.6s var(--ease-editorial),
+      color 0.6s var(--ease-editorial),
+      border-color 0.6s var(--ease-editorial);
+  }
+
+  ::selection {
+    background-color: var(--pg-selection);
+    color: var(--pg-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--pg-clay);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/*
+  Paper grain. Fixed, non-interactive, and only ever on the body overlay —
+  never on a scrolling container.
+*/
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: var(--pg-grain-opacity);
+  mix-blend-mode: var(--pg-grain-blend);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='180' height='180' filter='url(%23n)'/></svg>");
+  background-size: 180px 180px;
+}
+
+/* Soft ambient wash behind the hero. Adapts to the theme. */
+.glow {
+  background-image: radial-gradient(
+    circle at center,
+    var(--pg-glow),
+    transparent 62%
+  );
+}
+
+/*
+  Scroll entry. Transform + opacity only — no blur, no layout properties.
+*/
+.reveal {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition:
+    opacity 0.9s var(--ease-editorial),
+    transform 0.9s var(--ease-editorial);
+}
+
+.reveal[data-visible="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Mobile menu: panel fades down, links rise in behind it. */
+@keyframes menu-panel-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes menu-link-in {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.menu-panel {
+  animation: menu-panel-in 0.45s var(--ease-editorial) both;
+}
+
+.menu-link {
+  animation: menu-link-in 0.6s var(--ease-editorial) both;
+}
+
+/* Hairline that never looks like a 1px CSS default border. */
+.rule {
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--pg-hairline) 12%,
+    var(--pg-hairline) 88%,
+    transparent
+  );
+}
+
+/* Animated underline for inline links. */
+.link-grow {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.5s var(--ease-editorial);
+}
+
+.link-grow:hover,
+.link-grow:focus-visible {
+  background-size: 100% 1px;
+}
