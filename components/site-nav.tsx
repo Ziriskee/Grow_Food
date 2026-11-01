@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowCircle } from "./arrow-circle";
 import { LeafMark } from "./leaf-mark";
+import { ThemeToggle } from "./theme-toggle";
 
 const links = [
   { href: "/#guide", label: "Find a plant" },
@@ -89,7 +90,8 @@ export function SiteNav() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
           <a
             href="/#guide"
             className="group hidden items-center gap-2 rounded-full bg-moss py-2 pl-4 pr-2 text-[0.8125rem] text-paper transition-colors duration-500 ease-editorial hover:bg-ink sm:inline-flex"

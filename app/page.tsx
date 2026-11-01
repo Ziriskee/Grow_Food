@@ -11,12 +11,6 @@ import { StanceList } from "@/components/stance-list";
 export default function HomePage() {
   return (
     <>
-      <a
-        href="#guide"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-moss focus:px-5 focus:py-2.5 focus:text-sm focus:text-paper"
-      >
-        Skip to search
-      </a>
 
       <SiteNav />
 
