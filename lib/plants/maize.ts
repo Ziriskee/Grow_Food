@@ -6,15 +6,31 @@ export const maize: Plant = {
   latin: "Zea mays",
   family: "Poaceae (grass)",
   category: "Cereal",
+  images: [
+    {
+      src: "/images/plants/maize/1.jpg",
+    },
+    { src: "/images/plants/maize/2.jpg" },
+    {
+      src: "/images/plants/maize/3.jpg",
+    },
+    {
+      src: "/images/plants/maize/4.jpg",
+    },
+    { src: "/images/plants/maize/5.jpg" },
+    {
+      src: "/images/plants/maize/6.jpg",
+    },
+  ],
   zones: ["Tropical", "Subtropical", "Temperate", "Highland"],
   difficulty: "Easy",
   lifecycle: "Annual",
   featured: true,
   blurb:
-    "Wind pollinated, so it wants a block rather than a single row. Water stress at silking costs more yield than at any other stage, and the difference shows up as missing kernels.",
+    "Plant corn in a bunch of rows, not one row, because the wind carries its pollen. Give it extra water when stringy hairs show up on the cobs. If it’s too dry then, some kernels won’t grow, so the cob will have empty spots.",
   facts: {
     light: "Full sun",
-    water: "High; critical from tasselling to silking",
+    water: "High; most important when the flowers and silk threads appear",
     soil: "Deep and fertile, pH 5.8–7.0",
     spacing: "25–30 cm in rows 75 cm apart, in blocks of four or more rows",
     harvest: "70–120 days depending on type and climate",
@@ -34,16 +50,16 @@ export const maize: Plant = {
       body: "Two crowded plants produce less than one well-spaced plant. Thin early, while the competition is still easy to see.",
     },
     {
-      title: "Protect the silking window",
-      body: "The two weeks around silking decide the crop. If it is dry then, water it — this is the one stage where irrigation pays back most directly in filled cobs.",
+      title: "Protect the flowering and silk stage",
+      body: "The two weeks around when stringy hairs appear on the cobs matter most. If the soil feels dry, water it. That’s when water helps the cobs fill up with kernels.",
     },
     {
-      title: "Side-dress as it stretches",
-      body: "Maize is a heavy nitrogen feeder. A side-dressing at knee height keeps the leaves green through grain fill; leave it too late and it feeds the stalk, not the cob.",
+      title: "Feed it while it grows tall",
+      body: "Maize needs a lot of nitrogen. Add fertilizer near the base of the plant when it is about knee-high. This keeps the leaves green while the grains fill. If you add it too late, it feeds the stem more than the cob.",
     },
     {
       title: "Harvest at the right stage for the use",
-      body: "Sweet corn is picked when the silks brown and a pressed kernel runs milky. Grain maize stays in the field until the husks dry and a black layer forms at the kernel base.",
+      body: "Sweet corn is picked when the silks turn brown and a pressed grain gives out milky juice. Grain maize stays in the field until the husks dry and a dark layer forms at the base of each grain.",
     },
   ],
   benefits: [
@@ -71,7 +87,7 @@ export const maize: Plant = {
     },
     {
       title: "Fall armyworm arrives fast",
-      body: "The caterpillars feed in the whorl where sprays do not reach. Check plants from emergence, and hand-remove or use a directed treatment rather than blanket spraying.",
+      body: "The caterpillars feed inside the tight center of young plants, where sprays may not reach. Check plants early, remove caterpillars by hand, or treat only the affected plants instead of spraying the whole field.",
     },
     {
       title: "A heavy feeder that depletes beds",
@@ -104,7 +120,7 @@ export const maize: Plant = {
   ],
   traditional: {
     summary:
-      "Maize silk is used in folk practice as a tea, traditionally for urinary complaints. This is a record of the practice, not evidence that it works.",
+      "Maize silk is used in folk practice as a tea, traditionally for urinary problems. This is a record of the practice, not evidence that it works.",
     reported: [
       "Silk tea is a traditional preparation and is not a substitute for treating an infection.",
       "Maize is a common allergen source in some regions, and mouldy grain is the serious risk, not the silk.",

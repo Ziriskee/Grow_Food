@@ -1,40 +1,81 @@
 "use client";
 
 import { useDeferredValue, useId, useMemo, useRef, useState } from "react";
-import { featuredPlants } from "@/lib/plants";
-import { SpecimenCard } from "./specimen-card";
 import Link from "next/link";
+import { featuredPlants, type Plant } from "@/lib/plants";
+import {
+  getCategorySlug,
+  plantCategories,
+  type PlantCategorySlug,
+} from "@/lib/categories";
+import { cn } from "@/lib/cn";
+import { SpecimenCard } from "./specimen-card";
 
 const suggestions = ["tomato", "herb", "tropical", "mediterranean"];
 
-export function GuideSearch() {
+type GuideSearchProps = {
+  /** The index to search; /plants passes the full list. */
+  plants: Plant[];
+  /** Show category sections when nothing is typed or filtered. */
+  grouped?: boolean;
+  noun?: string;
+};
+
+export function GuideSearch({
+  plants,
+  grouped = false,
+  noun = "entries",
+}: GuideSearchProps) {
   const [query, setQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState<
+    "all" | PlantCategorySlug
+  >("all");
   const deferredQuery = useDeferredValue(query);
   const inputId = useId();
   const inputRef = useRef<HTMLInputElement>(null);
 
+  const hasQuery = query.trim().length > 0;
+
   const results = useMemo(() => {
     const needle = deferredQuery.trim().toLowerCase();
-    if (!needle) return featuredPlants;
 
-    return featuredPlants.filter((plant) =>
-      [
+    return plants?.filter((plant) => {
+      const matchesCategory =
+        selectedCategory === "all" ||
+        getCategorySlug(plant.category) === selectedCategory;
+
+      if (!matchesCategory) return false;
+      if (!needle) return true;
+
+      return [
         plant.name,
         plant.latin,
         plant.family,
         plant.category,
         plant.zones.join(" "),
-        plant.facts.light,
-        plant.facts.water,
         plant.blurb,
       ]
         .join(" ")
         .toLowerCase()
-        .includes(needle),
-    );
-  }, [deferredQuery]);
+        .includes(needle);
+    });
+  }, [plants, deferredQuery, selectedCategory]);
 
-  const hasQuery = query.trim().length > 0;
+  /**
+   * Empty-state escapes derived from the live data, so they never repeat the
+   * always-visible "Try" row. Always valid searches, always different.
+   */
+  const closeSearches = useMemo(() => {
+    const blocked = new Set(
+      suggestions.map((suggestion) => suggestion.toLowerCase()),
+    );
+    return plants
+      ?.filter((plant) => !blocked.has(plant.name.toLowerCase()))
+      .slice(0, 4)
+      .map((plant) => plant.name);
+  }, [plants]);
+
+  const showGroups = grouped && !hasQuery && selectedCategory === "all";
 
   return (
     <div>
@@ -58,7 +99,7 @@ export function GuideSearch() {
           </svg>
 
           <label htmlFor={inputId} className="sr-only">
-            Search plants by name, category or climate
+            Search plants by name, family, category or climate
           </label>
           <input
             ref={inputRef}
@@ -106,30 +147,106 @@ export function GuideSearch() {
         ))}
       </div>
 
+      <div className="mt-5 flex flex-wrap items-center gap-2">
+        <span className="text-[0.6875rem] uppercase tracking-[0.16em] text-ink-faint">
+          Category
+        </span>
+
+        <button
+          type="button"
+          onClick={() => setSelectedCategory("all")}
+          aria-pressed={selectedCategory === "all"}
+          className={cn(
+            "rounded-full border px-3 py-1 text-[0.75rem] transition-colors duration-500 ease-editorial",
+            selectedCategory === "all"
+              ? "border-moss bg-moss text-paper"
+              : "border-hairline text-ink-soft hover:border-moss-soft hover:text-ink",
+          )}
+        >
+          All
+        </button>
+
+        {plantCategories.map((category) => (
+          <button
+            key={category.slug}
+            type="button"
+            onClick={() => setSelectedCategory(category.slug)}
+            aria-pressed={selectedCategory === category.slug}
+            className={cn(
+              "rounded-full border px-3 py-1 text-[0.75rem] transition-colors duration-500 ease-editorial",
+              selectedCategory === category.slug
+                ? "border-moss bg-moss text-paper"
+                : "border-hairline text-ink-soft hover:border-moss-soft hover:text-ink",
+            )}
+          >
+            {category.name}
+          </button>
+        ))}
+      </div>
+
       <div className="mt-8 flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
         <p aria-live="polite" className="text-[0.8125rem] text-ink-faint">
           {hasQuery
-            ? `${results.length} ${
-                results.length === 1 ? "entry matches" : "entries match"
+            ? `${results?.length} ${
+                results?.length === 1 ? "entry matches" : "entries match"
               } “${query.trim()}”`
-            : `${results.length} entries in the guide`}
+            : `${results?.length} ${noun} in the guide`}
         </p>
-        <Link
-          href="/plants"
-          className="link-grow pb-0.5 text-[0.8125rem] text-ink-soft transition-colors duration-500 ease-editorial hover:text-ink"
-        >
-          Browse all plants
-        </Link>
+
       </div>
 
-      {results.length > 0 ? (
-        <ul className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {results.map((plant) => (
-            <li key={plant.slug}>
-              <SpecimenCard plant={plant} className="h-full" />
-            </li>
-          ))}
-        </ul>
+      {results?.length > 0 ? (
+        showGroups ? (
+          <div className="mt-10 flex flex-col gap-14">
+            {plantCategories.map((category) => {
+              const categoryPlants = results?.filter(
+                (plant) => getCategorySlug(plant.category) === category.slug,
+              );
+
+              if (categoryPlants?.length === 0) return null;
+
+              return (
+                <section
+                  key={category.slug}
+                  aria-labelledby={`category-${category.slug}`}
+                >
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+                    <h2
+                      id={`category-${category.slug}`}
+                      className="font-display text-3xl tracking-[-0.02em] text-ink"
+                    >
+                      {category.name}
+                    </h2>
+                    <p className="text-[0.8125rem] text-ink-faint">
+                      {categoryPlants?.length}{" "}
+                      {categoryPlants?.length === 1 ? "entry" : "entries"}
+                    </p>
+                  </div>
+
+                  <p className="mt-3 max-w-[70ch] text-[0.9375rem] leading-relaxed text-ink-soft">
+                    {category.description}
+                  </p>
+
+                  <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                    {categoryPlants?.map((plant) => (
+                      <li key={plant.slug}>
+                        <SpecimenCard plant={plant} className="h-full" />
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              );
+            })}
+          </div>
+        ) : (
+          <ul className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {results?.map((plant) => (
+              <li key={plant.slug}>
+                <SpecimenCard plant={plant} className="h-full" />
+              </li>
+            ))}
+          </ul>
+        )
       ) : (
         <div
           role="status"
@@ -139,8 +256,8 @@ export function GuideSearch() {
             Nothing under “{query.trim()}”
           </p>
           <p className="mx-auto mt-3 max-w-sm text-[0.9375rem] leading-relaxed text-ink-soft">
-            The index is still growing. Try a plant name, a category such as
-            “herb”, or a climate such as “temperate”.
+            No entry matches yet. The index is still growing, so a gap means the
+            plant is not here yet — not that the search is broken.
           </p>
           <button
             type="button"
@@ -152,6 +269,26 @@ export function GuideSearch() {
           >
             Show every entry
           </button>
+          {closeSearches?.length > 0 ? (
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
+              <span className="text-[0.6875rem] uppercase tracking-[0.16em] text-ink-faint">
+                Close searches
+              </span>
+              {closeSearches?.map((suggestion) => (
+                <button
+                  key={suggestion}
+                  type="button"
+                  onClick={() => {
+                    setQuery(suggestion);
+                    inputRef.current?.focus();
+                  }}
+                  className="rounded-full border border-hairline px-3 py-1 text-[0.75rem] text-ink-soft transition-colors duration-500 ease-editorial hover:border-moss-soft hover:text-ink"
+                >
+                  {suggestion}
+                </button>
+              ))}
+            </div>
+          ) : null}
         </div>
       )}
     </div>

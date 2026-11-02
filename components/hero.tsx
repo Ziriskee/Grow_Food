@@ -1,12 +1,12 @@
 import { getPlant } from "@/lib/plants";
 import { ArrowCircle } from "./arrow-circle";
 import { Reveal } from "./reveal";
-import { SpecimenCard } from "./specimen-card";
+import { SpecimenPager } from "./specimen-pager";
 
 export function Hero() {
-  const tomato = getPlant("tomato");
-  const flutedPumpkin = getPlant("fluted-pumpkin");
-  const rosemary = getPlant("rosemary");
+  const heroPlants = ["tomato", "fluted-pumpkin", "rosemary"]
+    .map((slug) => getPlant(slug))
+    .filter((plant): plant is NonNullable<typeof plant> => Boolean(plant));
 
   return (
     <section id="top" className="relative overflow-hidden">
@@ -28,7 +28,7 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={80}>
-            <h1 className="mt-7 text-balance font-display text-[clamp(2.6rem,7vw,5.1rem)] leading-[0.93] tracking-[-0.035em] text-ink">
+            <h1 className="mt-7 text-balance font-display text-[clamp(2rem,7vw,4.5rem)] leading-[0.93] tracking-[-0.035em] text-ink">
               Know the plant
               <br className="hidden sm:block" /> before you{" "}
               <em className="italic text-moss">plant</em> it.
@@ -46,7 +46,7 @@ export function Hero() {
           <Reveal delay={240}>
             <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4">
               <a
-                href="#guide"
+                href="/plants"
                 className="group inline-flex items-center gap-3 rounded-full bg-moss py-2 pl-6 pr-2 text-[0.875rem] text-paper transition-colors duration-700 ease-editorial hover:bg-ink active:scale-[0.98]"
               >
                 Search the guide
@@ -69,33 +69,9 @@ export function Hero() {
           </Reveal>
         </div>
 
-        <div className="hidden lg:block">
-          <div className="relative mx-auto w-full max-w-[25rem]">
-            {tomato ? (
-              <Reveal delay={140}>
-                <SpecimenCard plant={tomato} className="-rotate-[1.8deg]" />
-              </Reveal>
-            ) : null}
-
-            {flutedPumpkin ? (
-              <Reveal delay={260}>
-                <SpecimenCard
-                  plant={flutedPumpkin}
-                  className="-mt-8 ml-12 rotate-[1.1deg]"
-                />
-              </Reveal>
-            ) : null}
-
-            {rosemary ? (
-              <Reveal delay={380}>
-                <SpecimenCard
-                  plant={rosemary}
-                  className="-mt-6 ml-4 rotate-[-0.7deg]"
-                />
-              </Reveal>
-            ) : null}
-          </div>
-        </div>
+        <Reveal delay={140}>
+          <SpecimenPager plants={heroPlants} />
+        </Reveal>
       </div>
     </section>
   );

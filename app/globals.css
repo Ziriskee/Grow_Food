@@ -39,7 +39,7 @@
 [data-theme="light"] {
   color-scheme: light;
 
-  --pg-paper: #f5f1e8;
+  --pg-paper: #dfdacf;
   --pg-paper-raised: #fbf8f2;
   --pg-ink: #1b201b;
   --pg-ink-soft: #4c544a;
@@ -78,6 +78,7 @@
 @layer base {
   html {
     -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
     scroll-behavior: smooth;
     background-color: var(--pg-paper);
   }

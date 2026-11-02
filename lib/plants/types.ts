@@ -35,12 +35,19 @@ export type TraditionalUse = {
   reported: string[];
 };
 
+export type PlantImage = {
+  src: string;
+  alt?: string;
+  credit?: string;
+};
+
 export type Plant = {
   slug: string;
   name: string;
   latin: string;
   family: string;
   category: string;
+  images?: PlantImage[];
   zones: ClimateZone[];
   difficulty: Difficulty;
   lifecycle: string;

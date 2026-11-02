@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { plants } from "@/lib/plants";
-import { PlantBrowser } from "@/components/plant-browser";
+import { GuideSearch } from "@/components/guide-search";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNav } from "@/components/site-nav";
+import { plants } from "@/lib/plants";
 
 export const metadata: Metadata = {
   title: "All plants",
   description:
-    "Browse every plant in the guide. Search by name, family, category or climate.",
+    "Search and browse every plant in the guide, grouped by category: herbs, leafy vegetables, fruiting vegetables, cereals and grains.",
 };
 
 export default function PlantsPage() {
@@ -23,22 +23,16 @@ export default function PlantsPage() {
             <Reveal>
               <SectionHeading
                 eyebrow="All plants"
-                title="Browse the guide."
-                lead="Search by name, family, category or climate. Every entry follows the same structure: growing facts, benefits, cautions, companions, bad neighbours, and traditional use where recorded."
+                title="Browse by category, or search the full index."
+                lead="Every entry follows the same structure: growing facts, benefits, cautions, companions, bad neighbours, and traditional use where recorded."
               />
             </Reveal>
 
             <div className="mt-12">
-              <PlantBrowser
+              <GuideSearch
                 plants={plants}
+                grouped
                 noun="plants"
-                suggestions={[
-                  "tomato",
-                  "herb",
-                  "tropical",
-                  "mediterranean",
-                  "Lamiaceae",
-                ]}
               />
             </div>
           </div>

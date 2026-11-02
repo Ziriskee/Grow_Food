@@ -52,8 +52,8 @@ const items: CoverItem[] = [
 
 export function CoverageGrid() {
   return (
-    <section id="covers" className="scroll-mt-32 py-24 md:py-36">
-      <div className="mx-auto w-full max-w-[1340px] px-5 sm:px-8">
+    <section id="covers" className="scroll-mt-30 py-18 md:py-20">
+      <div className="mx-auto w-full max-w-335 px-5 sm:px-8">
         <Reveal>
           <SectionHeading
             eyebrow="What's on a page"

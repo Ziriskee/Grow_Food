@@ -6,6 +6,22 @@ export const okra: Plant = {
   latin: "Abelmoschus esculentus",
   family: "Malvaceae (mallow)",
   category: "Fruiting vegetable",
+  images: [
+    {
+      src: "/images/plants/okra/1.jpg",
+    },
+    { src: "/images/plants/okra/2.jpg" },
+    {
+      src: "/images/plants/okra/3.jpg",
+    },
+    {
+      src: "/images/plants/okra/4.jpg",
+    },
+    { src: "/images/plants/okra/5.jpg" },
+    {
+      src: "/images/plants/okra/6.jpg",
+    },
+  ],
   zones: ["Tropical", "Subtropical"],
   difficulty: "Easy",
   lifecycle: "Annual",

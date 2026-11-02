@@ -6,6 +6,22 @@ export const spearmint: Plant = {
   latin: "Mentha spicata",
   family: "Lamiaceae (mint)",
   category: "Herb",
+  images: [
+    {
+      src: "/images/plants/spearmint/1.jpg",
+    },
+    { src: "/images/plants/spearmint/2.jpg" },
+    {
+      src: "/images/plants/spearmint/3.jpg",
+    },
+    {
+      src: "/images/plants/spearmint/4.jpg",
+    },
+    { src: "/images/plants/spearmint/5.jpg" },
+    {
+      src: "/images/plants/spearmint/6.jpg",
+    },
+  ],
   zones: ["Temperate", "Subtropical"],
   difficulty: "Easy",
   lifecycle: "Herbaceous perennial",

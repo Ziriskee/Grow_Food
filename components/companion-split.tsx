@@ -20,7 +20,7 @@ export function CompanionSplit() {
   return (
     <section
       id="companions"
-      className="scroll-mt-32 border-y border-hairline bg-paper-raised/40 py-24 md:py-36"
+      className="scroll-mt-32 border-y border-hairline bg-paper-raised/40 py-24 md:py-20"
     >
       <div className="mx-auto grid w-full max-w-[1340px] gap-14 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
         <Reveal className="lg:sticky lg:top-32 lg:self-start">

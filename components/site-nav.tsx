@@ -4,9 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowCircle } from "./arrow-circle";
 import { LeafMark } from "./leaf-mark";
 import { ThemeToggle } from "./theme-toggle";
+import Link from "next/link";
 
 const links = [
-  { href: "/#guide", label: "Find a plant" },
+  { href: "/plants", label: "Find a plant" },
   { href: "/#covers", label: "What's on a page" },
   { href: "/#companions", label: "Combining" },
   { href: "/#stance", label: "How it's written" },
@@ -65,9 +66,9 @@ export function SiteNav() {
     <header className="sticky top-4 z-40 px-4 sm:top-6">
       <nav
         aria-label="Primary"
-        className="relative z-40 mx-auto flex w-full max-w-5xl items-center justify-between gap-4 rounded-full bg-paper/75 py-2 pl-4 pr-2 ring-1 ring-hairline backdrop-blur-xl sm:pl-5"
+        className="relative z-40 mx-auto flex w-full max-w-5xl items-center justify-between gap-4 rounded-full bg-paper/75 py-2 pl-4 pr-2 ring-1 ring-hairline backdrop-blur-xl sm:pl-5 border-moss border "
       >
-        <a
+        <Link
           href="/#top"
           className="flex items-center gap-2.5 rounded-full py-1 pr-2 text-ink transition-opacity duration-500 ease-editorial hover:opacity-70"
         >
@@ -75,30 +76,30 @@ export function SiteNav() {
           <span className="font-display text-lg tracking-[-0.01em]">
             Plantguide
           </span>
-        </a>
+        </Link>
 
-        <ul className="hidden items-center gap-7 md:flex">
+        <ul className="hidden items-center gap-7 lg:flex">
           {links.map((link) => (
             <li key={link.href}>
-              <a
+              <Link
                 href={link.href}
                 className="link-grow pb-0.5 text-[0.8125rem] text-ink-soft transition-colors duration-500 ease-editorial hover:text-ink"
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
 
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <a
-            href="/#guide"
+          <Link
+            href="/plants"
             className="group hidden items-center gap-2 rounded-full bg-moss py-2 pl-4 pr-2 text-[0.8125rem] text-paper transition-colors duration-500 ease-editorial hover:bg-ink sm:inline-flex"
           >
             Search
             <ArrowCircle className="h-6 w-6 bg-paper/15 text-[0.7rem] transition-transform duration-700 ease-editorial group-hover:-translate-y-px group-hover:translate-x-0.5" />
-          </a>
+          </Link>
 
           <button
             ref={toggleRef}
@@ -106,7 +107,7 @@ export function SiteNav() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             onClick={() => setOpen((value) => !value)}
-            className="relative flex h-10 w-10 items-center justify-center rounded-full text-ink transition-colors duration-500 ease-editorial hover:bg-ink/5 md:hidden"
+            className="relative flex h-10 w-10 items-center justify-center rounded-full text-ink transition-colors duration-500 ease-editorial hover:bg-ink/5 lg:hidden"
           >
             <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
             <span className="relative block h-4 w-5" aria-hidden="true">
@@ -137,7 +138,7 @@ export function SiteNav() {
           role="dialog"
           aria-modal="true"
           aria-label="Menu"
-          className="menu-panel fixed inset-0 z-30 flex flex-col justify-center bg-paper/95 px-8 pb-16 pt-24 backdrop-blur-2xl md:hidden"
+          className="menu-panel fixed inset-0 z-30 flex flex-col justify-center bg-paper/95 px-8 pb-16 pt-24 backdrop-blur-2xl lg:hidden"
         >
           <ul className="mx-auto flex w-full max-w-sm flex-col gap-2">
             {links.map((link, index) => (
@@ -146,7 +147,7 @@ export function SiteNav() {
                 className="menu-link"
                 style={{ animationDelay: `${120 + index * 80}ms` }}
               >
-                <a
+                <Link
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className="flex items-baseline gap-4 border-b border-hairline py-5 font-display text-3xl tracking-[-0.02em] text-ink"
@@ -155,7 +156,7 @@ export function SiteNav() {
                     0{index + 1}
                   </span>
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

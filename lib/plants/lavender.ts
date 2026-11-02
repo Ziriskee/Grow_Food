@@ -6,6 +6,22 @@ export const lavender: Plant = {
   latin: "Lavandula angustifolia",
   family: "Lamiaceae (mint)",
   category: "Herb",
+  images: [
+    {
+      src: "/images/plants/lavender/1.jpg",
+    },
+    { src: "/images/plants/lavender/2.jpg" },
+    {
+      src: "/images/plants/lavender/3.jpg",
+    },
+    {
+      src: "/images/plants/lavender/4.jpg",
+    },
+    { src: "/images/plants/lavender/5.jpg" },
+    {
+      src: "/images/plants/lavender/6.jpg",
+    },
+  ],
   zones: ["Mediterranean", "Temperate", "Arid"],
   difficulty: "Moderate",
   lifecycle: "Woody evergreen subshrub, short lived",

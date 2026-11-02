@@ -6,12 +6,28 @@ export const tomato: Plant = {
   latin: "Solanum lycopersicum",
   family: "Solanaceae (nightshade)",
   category: "Fruiting vegetable",
+  images: [
+    {
+      src: "/images/plants/tomato/1.jpg",
+    },
+    { src: "/images/plants/tomato/2.jpg" },
+    {
+      src: "/images/plants/tomato/3.jpg",
+    },
+    {
+      src: "/images/plants/tomato/4.jpg",
+    },
+    { src: "/images/plants/tomato/5.jpg" },
+    {
+      src: "/images/plants/tomato/6.jpg",
+    },
+  ],
   zones: ["Temperate", "Subtropical", "Mediterranean"],
   difficulty: "Moderate",
   lifecycle: "Annual in most gardens; short-lived perennial in the tropics",
   featured: true,
   blurb:
-    "The most grown and the most overwatered plant in the world. Fruit set stops when nights stay above about 24°C, and irregular watering does more damage than any pest.",
+    "The most grown and most overwatered plant in the world. The plant may stop forming fruit when nights stay above about 24°C. Uneven watering causes more damage than any pest.",
   facts: {
     light: "Full sun, 6–8 hours",
     water: "Deep and steady, not daily sprinkling",
@@ -23,27 +39,27 @@ export const tomato: Plant = {
   growing: [
     {
       title: "Start them warm",
-      body: "Sow 6–8 weeks before your last frost at about 20–25°C. Germination stalls below 15°C, which is the most common reason a first sowing fails.",
+      body: "Sow 6–8 weeks before the last very cold night of the season, at about 20–25°C. Seeds sprout slowly or fail below 15°C. This is the most common reason a first sowing fails.",
     },
     {
-      title: "Pot on deeply",
-      body: "Move seedlings into a deeper pot once they have two true leaves. Bury the stem up to the lowest leaves — tomatoes root along the buried stem and grow a stronger system.",
+      title: "Move seedlings to deeper pots",
+      body: "Move seedlings into a deeper pot once they have their first true leaves. Bury the stem up to the lowest leaves. Tomatoes can grow roots along the buried stem, which makes a stronger root system.",
     },
     {
-      title: "Harden off before planting out",
-      body: "Spend 7–10 days moving plants outside for longer each day. Plant out only when nights stay above 10°C; cold nights below that stunt the plant for weeks.",
+      title: "Prepare young plants for outdoor life",
+      body: "Spend 7–10 days moving plants outside for longer each day. Move them to the garden only when nights stay above 10°C. Colder nights can slow the plant down for weeks.",
     },
     {
       title: "Stake at planting, not later",
       body: "Drive the support in beside the seedling on day one. Adding a stake to a grown plant damages roots and the stems that are already heavy with fruit.",
     },
     {
-      title: "Water consistently, feed at first fruit",
-      body: "Aim for even moisture. Watering that swings from drought to soaking splits fruit and causes blossom-end rot. Start a potassium-leaning feed once the first fruit set.",
+      title: "Water evenly and feed when the first fruits appear",
+      body: "Keep the soil evenly moist. Watering that swings between very dry and very wet can split fruit and cause blossom-end rot, a dark sunken spot at the bottom of the fruit. Start feeding with a fertilizer made for fruiting plants once the first fruits appear.",
     },
     {
-      title: "Pick at colour break",
-      body: "Fruit picked as it turns from green to pink finishes ripening indoors and avoids splitting. Remove side shoots on vining types if you want fewer, larger trusses.",
+      title: "Pick when the colour starts to change",
+      body: "Pick fruit when it just starts changing from green to pink. It will finish ripening indoors and is less likely to split. On climbing types, remove small side stems if you want fewer but larger fruit clusters.",
     },
   ],
   benefits: [
@@ -67,15 +83,15 @@ export const tomato: Plant = {
     },
     {
       title: "Blossom-end rot is a watering problem",
-      body: "The sunken black base is caused by calcium not reaching the fruit, usually through uneven watering rather than a lack of calcium in the soil. Adding calcium rarely fixes it.",
+      body: "The dark sunken spot at the bottom of the fruit is usually caused by uneven watering, not by missing calcium in the soil. Adding calcium rarely fixes it.",
     },
     {
       title: "Heat shuts fruit set down",
-      body: "Above roughly 32°C by day and 24°C at night, pollen becomes unviable and flowers drop. In hot climates, choose heat-set varieties or plant for a cool-season crop.",
+      body: "When days are above about 32°C and nights above about 24°C, flowers may drop without forming fruit. In hot climates, choose varieties that can set fruit in heat, or grow tomatoes in the cooler season.",
     },
     {
-      title: "Late blight spreads in days",
-      body: "In cool, wet weather the crop can collapse within a week. Space plants for airflow, water at the base, and remove infected plants rather than trying to rescue them.",
+      title: "Late blight spreads fast",
+      body: "Late blight is a fast-spreading disease. In cool, wet weather, the crop can collapse within a week. Space plants so air can move, water at the base, and remove infected plants instead of trying to save them.",
     },
   ],
   companions: [
@@ -88,8 +104,8 @@ export const tomato: Plant = {
       why: "Marigold roots release compounds that suppress root-knot nematodes in the soil around them. The effect is local to the root zone, not a whole-bed cure.",
     },
     {
-      plant: "Flowering herbs (borage, coriander left to bolt)",
-      why: "They bring in the pollinators and predatory wasps that tomato flowers and hornworm caterpillars attract. This is the pairing with the clearest mechanism behind it.",
+      plant: "Flowering herbs (borage, coriander allowed to flower)",
+      why: "They attract pollinators and helpful wasps that can attack tomato pests. This pairing has the clearest reason behind it.",
     },
   ],
   avoid: [

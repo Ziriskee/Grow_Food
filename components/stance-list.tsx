@@ -25,7 +25,7 @@ export function StanceList() {
     <section id="stance" className="scroll-mt-32 py-24 md:py-36">
       <div className="mx-auto w-full max-w-[1340px] px-5 sm:px-8">
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
-          <Reveal>
+          <Reveal className="lg:sticky lg:top-32 lg:self-start">
             <SectionHeading
               eyebrow="How it's written"
               title="What this guide refuses to do."

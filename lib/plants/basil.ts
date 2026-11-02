@@ -6,12 +6,28 @@ export const basil: Plant = {
   latin: "Ocimum basilicum",
   family: "Lamiaceae (mint)",
   category: "Herb",
+  images: [
+    {
+      src: "/images/plants/basil/1.jpg",
+    },
+    { src: "/images/plants/basil/2.jpg" },
+    {
+      src: "/images/plants/basil/3.jpg",
+    },
+    {
+      src: "/images/plants/basil/4.jpg",
+    },
+    { src: "/images/plants/basil/5.jpg" },
+    {
+      src: "/images/plants/basil/6.jpg",
+    },
+  ],
   zones: ["Tropical", "Subtropical", "Temperate"],
   difficulty: "Easy",
   lifecycle: "Tender annual; behaves as a short-lived perennial in the tropics",
   featured: true,
   blurb:
-    "Pinch the flowering tips or the leaf crop ends early. Basil bolts fast in dry heat and sulks below about 12°C, which is why it fails in spring more often than in summer.",
+    "Remove the flower tips early, or the leaf harvest ends sooner. Basil flowers quickly in dry heat and grows poorly below about 12°C. This is why it often fails in spring more than in summer.",
   facts: {
     light: "Full sun, 5–6 hours; afternoon shade in hot climates",
     water: "Keep moist; wilts within hours when dry",
@@ -26,20 +42,20 @@ export const basil: Plant = {
       body: "Basil seed needs light to germinate, so press it into the surface and barely cover. Keep it at 18–22°C; cold soil is the usual cause of a patchy row.",
     },
     {
-      title: "Keep humidity up until it is up",
-      body: "Germination takes 5–10 days. Cover the tray to hold moisture, then remove the cover the moment seedlings appear or they stretch and fall over.",
+      title: "Keep the tray moist until seedlings appear",
+      body: "Sprouting takes 5–10 days. Cover the tray to hold moisture, then remove the cover as soon as seedlings appear. If covered too long, they can stretch and fall over.",
     },
     {
-      title: "Pinch above the second leaf pair",
-      body: "The first pinch decides the shape of the plant. Cutting above a leaf pair makes it branch into two, then four. Plants that are never pinched stay single-stemmed and go to flower early.",
+      title: "Cut above the second set of leaves",
+      body: "The first cut decides the shape of the plant. Cutting above a set of two leaves makes the plant branch into two, then four. If you never cut it, it grows one main stem and flowers early.",
     },
     {
-      title: "Remove flower spikes on sight",
-      body: "Once flowering starts, leaf production drops sharply and the leaves turn bitter. Cut the whole spike back to a leaf pair, not just the flower head.",
+      title: "Remove flower spikes as soon as you see them",
+      body: "Once flowering starts, the plant makes far fewer leaves and the leaves can taste bitter. Cut the whole flower spike back to a set of leaves, not just the flower top.",
     },
     {
       title: "Water at the base",
-      body: "Wet foliage overnight in cool weather is how downy mildew gets in, and it spreads fast. Water the soil, keep the leaves dry, and space plants so air moves.",
+      body: "Wet leaves overnight in cool weather can invite downy mildew, a leaf disease that spreads fast. Water the soil, keep the leaves dry, and space plants so air can move.",
     },
   ],
   benefits: [
@@ -59,15 +75,15 @@ export const basil: Plant = {
   cautions: [
     {
       title: "Cold is the main killer",
-      body: "Below about 12°C growth stops, and a light frost ends the plant. In cool climates, treat basil as a summer crop and sow successionally rather than trying to overwinter it.",
+      body: "If it’s colder than about 12°C (54°F), basil stops growing. A little frost can kill it. In cool places, grow basil in summer and plant a few seeds every few weeks. Don’t try to keep one plant going all winter.",
     },
     {
       title: "Downy mildew arrives overnight",
-      body: "Yellow patches on top of the leaf with grey fuzz underneath means the plant is finished. Remove it entirely — the spores persist in debris and on neighbouring plants.",
+      body: "Yellow patches on top of the leaf with grey fuzz underneath mean the plant is badly infected. Remove the whole plant. The disease can remain on dead leaves and nearby plants.",
     },
     {
       title: "Concentrated oil is not the leaf",
-      body: "Culinary leaves and pressed essential oil are different preparations at wildly different strengths. Do not substitute one for the other.",
+      body: "Cooking basil leaves and basil essential oil are very different strengths. The oil is much stronger. Don’t use one in place of the other.",
     },
   ],
   companions: [
@@ -87,20 +103,20 @@ export const basil: Plant = {
   avoid: [
     {
       plant: "Rue",
-      why: "Rue is allelopathic and suppresses plants around it, including herbs. It belongs on its own, away from the kitchen bed.",
+      why: "Rue can hurt the plants around it, including other herbs. Grow it alone, away from the herbs you use for cooking.",
     },
     {
       plant: "Fennel",
-      why: "Fennel both suppresses neighbours chemically and grows tall enough to shade basil out. The two do not share a bed well.",
+      why: "Fennel can hurt the plants around it and grows tall enough to shade basil. Keep fennel and basil in separate beds.",
     },
   ],
   traditional: {
     summary:
-      "Basil leaf infusions are used in many culinary traditions as a digestive and a calmative, and the fresh leaf is applied to insect bites in some folk practice. The leaf as food and the essential oil as a concentrate are treated as different things here.",
+      "Basil leaf teas are used in many food traditions to help digestion and calm the stomach. In some folk practice, fresh leaves are placed on insect bites. Basil leaf as food and basil essential oil as a concentrate are treated as different things here.",
     reported: [
-      "The essential oil is a much stronger preparation than the leaf and is not a kitchen substitute.",
-      "Estragole, a compound in basil oil, is flagged for large or repeated doses, particularly for young children and during pregnancy.",
-      "Concentrated oils should not be applied neat to skin or taken internally without qualified guidance.",
+      "Essential oil is much stronger than the leaf and is not a kitchen substitute.",
+      "Estragole, a substance in basil oil, may be risky in large or repeated doses, especially for young children and during pregnancy.",
+      "Do not apply undiluted oils to the skin or swallow them without expert guidance.",
     ],
   },
   reviewedAt: "2026-10-31",

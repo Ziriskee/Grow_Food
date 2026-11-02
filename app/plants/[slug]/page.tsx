@@ -1,26 +1,22 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNav } from "@/components/site-nav";
 import { getPlant, plants } from "@/lib/plants";
+import { PlantImage } from "@/components/plant-image";
 
 type PlantPageProps = {
   params:
-    | {
-        slug: string;
-      }
-    | Promise<{
-        slug: string;
-      }>;
+    | { slug: string }
+    | Promise<{ slug: string }>;
 };
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return plants.map((plant) => ({
-    slug: plant.slug,
-  }));
+  return plants.map((plant) => ({ slug: plant.slug }));
 }
 
 async function resolveSlug(params: PlantPageProps["params"]): Promise<string> {
@@ -31,19 +27,13 @@ async function resolveSlug(params: PlantPageProps["params"]): Promise<string> {
 export async function generateMetadata({
   params,
 }: PlantPageProps): Promise<Metadata> {
-  const slug = await resolveSlug(params);
-  const plant = getPlant(slug);
+  const plant = getPlant(await resolveSlug(params));
 
   if (!plant) {
-    return {
-      title: "Plant not found",
-    };
+    return { title: "Plant not found" };
   }
 
-  return {
-    title: plant.name,
-    description: plant.blurb,
-  };
+  return { title: plant.name, description: plant.blurb };
 }
 
 function factLabel(key: string): string {
@@ -51,19 +41,20 @@ function factLabel(key: string): string {
 }
 
 export default async function PlantPage({ params }: PlantPageProps) {
-  const slug = await resolveSlug(params);
-  const plant = getPlant(slug);
+  const plant = getPlant(await resolveSlug(params));
 
   if (!plant) {
     notFound();
     return null;
   }
 
+  const leadImage = plant.images?.[0];
+
   return (
     <>
       <SiteNav />
 
-      <main className="pb-24 pt-28 md:pb-32 md:pt-32">
+      <main className="pb-24 pt-15 md:pb-17 md:pt-22">
         <div className="mx-auto w-full max-w-[1100px] px-5 sm:px-8">
           <Link
             href="/#guide"
@@ -72,29 +63,73 @@ export default async function PlantPage({ params }: PlantPageProps) {
             Back to search
           </Link>
 
-          <header className="mt-10 max-w-3xl">
-            <p className="text-[0.625rem] uppercase tracking-[0.22em] text-clay">
-              {plant.category}
-            </p>
+          <header className="mt-10 grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <div className="max-w-3xl">
+              <p className="text-[0.625rem] uppercase tracking-[0.22em] text-clay">
+                {plant.category}
+              </p>
 
-            <h1 className="mt-5 text-balance font-display text-[clamp(2.4rem,5vw,4.2rem)] leading-[1.02] tracking-[-0.03em] text-ink">
-              {plant.name}
-            </h1>
+              <h1 className="mt-5 text-balance font-display text-[clamp(2.4rem,5vw,4.2rem)] leading-[1.02] tracking-[-0.03em] text-ink">
+                {plant.name}
+              </h1>
 
-            <p className="mt-3 font-display text-lg italic text-ink-faint">
-              {plant.latin}
-            </p>
+              <p className="mt-3 font-display text-lg italic text-ink-faint">
+                {plant.latin}
+              </p>
 
-            <p className="mt-6 text-[1rem] leading-[1.7] text-ink-soft">
-              {plant.blurb}
-            </p>
+              <p className="mt-6 text-[1rem] leading-[1.7] text-ink-soft">
+                {plant.blurb}
+              </p>
 
-            <p className="mt-6 text-[0.8125rem] leading-relaxed text-ink-faint">
-              {plant.zones.join(" · ")} · {plant.difficulty} · {plant.lifecycle}
-            </p>
+              <p className="mt-6 text-[0.8125rem] leading-relaxed text-ink-faint">
+                {plant.zones.join(" · ")} · {plant.difficulty} ·{" "}
+                {plant.lifecycle}
+              </p>
+            </div>
+
+            {leadImage ? (
+              <PlantImage
+                image={leadImage}
+                priority
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                className="aspect-[4/3] rounded-[1.75rem] ring-1 ring-hairline"
+              />
+            ) : (
+              <div
+                aria-hidden="true"
+                className="flex aspect-[4/3] items-center justify-center rounded-[1.75rem] bg-ink/[0.04] ring-1 ring-hairline"
+              >
+                <span className="font-display text-6xl text-ink-faint">
+                  {plant.name.charAt(0)}
+                </span>
+              </div>
+            )}
           </header>
 
-          <dl className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {plant.images && plant.images.length > 0 ? (
+            <section className="mt-16" aria-labelledby="plant-images">
+              <h2
+                id="plant-images"
+                className="font-display text-3xl tracking-[-0.02em] text-ink"
+              >
+                Images
+              </h2>
+
+              <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {plant.images.map((image) => (
+                  <li key={image.src}>
+                    <PlantImage
+                      image={image}
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="aspect-[4/3] rounded-[1.5rem] ring-1 ring-hairline"
+                    />
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ) : null}
+
+          <dl className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {Object.entries(plant.facts).map(([key, value]) => (
               <div
                 key={key}

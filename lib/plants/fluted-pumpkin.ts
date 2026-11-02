@@ -6,6 +6,22 @@ export const flutedPumpkin: Plant = {
   latin: "Telfairia occidentalis",
   family: "Cucurbitaceae (gourd)",
   category: "Leafy vegetable",
+  images: [
+    {
+      src: "/images/plants/fluted-pumpkin/1.jpg",
+    },
+    { src: "/images/plants/fluted-pumpkin/2.jpg" },
+    {
+      src: "/images/plants/fluted-pumpkin/3.jpg",
+    },
+    {
+      src: "/images/plants/fluted-pumpkin/4.jpg",
+    },
+    { src: "/images/plants/fluted-pumpkin/5.jpg" },
+    {
+      src: "/images/plants/fluted-pumpkin/6.jpg",
+    },
+  ],
   zones: ["Tropical"],
   difficulty: "Moderate",
   lifecycle: "Perennial vine grown as an annual for leaves, or kept for seed",

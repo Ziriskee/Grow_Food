@@ -6,6 +6,22 @@ export const rosemary: Plant = {
   latin: "Salvia rosmarinus",
   family: "Lamiaceae (mint)",
   category: "Herb",
+  images: [
+    {
+      src: "/images/plants/rosemary/1.jpg",
+    },
+    { src: "/images/plants/rosemary/2.jpg" },
+    {
+      src: "/images/plants/rosemary/3.jpg",
+    },
+    {
+      src: "/images/plants/rosemary/4.jpg",
+    },
+    { src: "/images/plants/rosemary/5.jpg" },
+    {
+      src: "/images/plants/rosemary/6.jpg",
+    },
+  ],
   zones: ["Mediterranean", "Temperate", "Subtropical"],
   difficulty: "Moderate",
   lifecycle: "Woody evergreen perennial",
