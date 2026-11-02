@@ -1,12 +1,9 @@
-import { getPlant } from "@/lib/plants";
+import { getPlant, plants } from "@/lib/plants";
 import { ArrowCircle } from "./arrow-circle";
 import { Reveal } from "./reveal";
 import { SpecimenPager } from "./specimen-pager";
 
 export function Hero() {
-  const heroPlants = ["tomato", "fluted-pumpkin", "rosemary"]
-    .map((slug) => getPlant(slug))
-    .filter((plant): plant is NonNullable<typeof plant> => Boolean(plant));
 
   return (
     <section id="top" className="relative overflow-hidden">
@@ -70,7 +67,7 @@ export function Hero() {
         </div>
 
         <Reveal delay={140}>
-          <SpecimenPager plants={heroPlants} />
+          <SpecimenPager plants={plants} />
         </Reveal>
       </div>
     </section>
