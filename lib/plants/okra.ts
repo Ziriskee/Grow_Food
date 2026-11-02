@@ -27,13 +27,13 @@ export const okra: Plant = {
   lifecycle: "Annual",
   featured: true,
   blurb:
-    "Pods turn woody within days of being ready. In heat you pick every other day or the plant stops producing, and the spines on some varieties will find your hands.",
+    "Pods turn woody within days of being ready. In heat, pick every other day, or the plant stops producing, and the fine hairs on some varieties will find your hands.",
   facts: {
     light: "Full sun",
     water: "Moderate and deep; tolerates short dry spells",
     soil: "Well drained, pH 5.8–7.0",
     spacing: "30–45 cm apart, 60–90 cm between rows",
-    harvest: "50–65 days from sowing, then every 1–2 days",
+    harvest: "50–65 days from sowing, then every other day",
     habit: "Upright annual to 1–2 m",
   },
   growing: [
@@ -78,7 +78,7 @@ export const okra: Plant = {
       body: "Two days late in hot weather and the pod is fibrous. This is the single most common reason people decide they dislike okra — it was picked late, not grown badly.",
     },
     {
-      title: "Some varieties have spines",
+      title: "Some varieties have fine hairs",
       body: "The stems and pods of many varieties carry fine irritating hairs. Wear gloves and long sleeves when picking, especially in the heat.",
     },
     {

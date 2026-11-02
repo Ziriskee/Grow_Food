@@ -27,7 +27,7 @@ export const lavender: Plant = {
   lifecycle: "Woody evergreen subshrub, short lived",
   featured: true,
   blurb:
-    "Needs lean, alkaline, sharply drained soil. Rich compost and summer watering are the two fastest ways to lose it, and it rarely lives much past eight years in any case.",
+    "Needs lean, alkaline, sharply drained soil. Rich compost and summer watering are the two fastest ways to lose it, and it rarely lives past eight years anyway.",
   facts: {
     light: "Full sun",
     water: "Sparse and deep; dry between waterings",
@@ -43,7 +43,7 @@ export const lavender: Plant = {
     },
     {
       title: "Plant on grit, not compost",
-      body: "Mix grit into the planting hole and set the plant slightly proud of the surface. Lavender roots rot in soil that stays wet around them.",
+      body: "Mix grit into the planting hole (grit is coarse sand or fine gravel) and set the crown just above the soil surface. Lavender roots rot in soil that stays wet around them.",
     },
     {
       title: "Do not feed it",

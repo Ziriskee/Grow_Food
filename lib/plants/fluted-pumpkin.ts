@@ -27,23 +27,23 @@ export const flutedPumpkin: Plant = {
   lifecycle: "Perennial vine grown as an annual for leaves, or kept for seed",
   featured: true,
   blurb:
-    "Known as ugu in Igbo. A vigorous vine grown for leaves and for the protein-rich seeds milled into egusi. It is dioecious, so some vines never bear pods at all.",
+    "Known as ugu in Igbo. A vigorous vine grown for leaves and for the protein-rich seeds milled into egusi. Plants are either male or female, so some vines never bear pods at all.",
   facts: {
     light: "Full sun; tolerates light shade",
     water: "High, but well drained",
     soil: "Fertile loam, pH 6.0–7.5",
-    spacing: "1 m apart on a trellis; 50 × 30 cm in dense leaf systems",
+    spacing: "1 m apart on a trellis; 50 × 30 cm in dense leaf plantings",
     harvest: "Leaf tips from about 8 weeks; pods after 4–6 months",
     habit: "Vine to 10 m or more; needs strong support",
   },
   growing: [
     {
-      title: "Break the seed's dormancy",
+      title: "Soak the hard seed first",
       body: "The seed coat is hard and germination is uneven. Nick or soak the seed for 12–24 hours before sowing, and expect some seeds to come up weeks after the rest.",
     },
     {
       title: "Raise seedlings, then transplant at six leaves",
-      body: "Sow into a nursery bed or deep pots — the seedling develops a long taproot fast and resents being moved once it is bigger. Transplant at roughly the six-leaf stage.",
+      body: "Sow into a nursery bed or deep pots — the seedling develops a long main root fast and resents being moved once it is bigger. Transplant at roughly the six-leaf stage.",
     },
     {
       title: "Give it something serious to climb",
@@ -110,7 +110,7 @@ export const flutedPumpkin: Plant = {
     summary:
       "The leaf is a standard vegetable in West African cooking and is used in traditional practice as a tonic, often given to people recovering from illness and used in weaning foods. The seed is processed into egusi.",
     reported: [
-      "Claims that the leaf 'builds blood' are traditional reputation rather than an established clinical effect; the leaf is a source of iron, but absorption from plant sources varies with the rest of the meal.",
+      "Claims that the leaf 'builds blood' are a traditional belief rather than an established medical effect; the leaf is a source of iron, but absorption from plant sources varies with the rest of the meal.",
       "The leaf is usually cooked. Large amounts of raw leaf are not part of the usual preparation.",
     ],
   },

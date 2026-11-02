@@ -39,7 +39,7 @@ export const rosemary: Plant = {
   growing: [
     {
       title: "Propagate from cuttings",
-      body: "Seed is slow and uneven. Take 10 cm cuttings of current-season growth in late spring and they root in six to eight weeks in a gritty mix.",
+      body: "Seed is slow and uneven. Take 10 cm cuttings of this year's growth in late spring and they root in six to eight weeks in a mix of half soil, half grit.",
     },
     {
       title: "Plant it high, on a mound",
@@ -47,7 +47,7 @@ export const rosemary: Plant = {
     },
     {
       title: "Do not enrich the soil",
-      body: "Rich compost produces soft, sappy growth that is more cold-sensitive and less aromatic. Lean soil is what the plant evolved for.",
+      body: "Rich compost produces soft, weak growth that is more cold-sensitive and less aromatic. Lean soil is what the plant evolved for.",
     },
     {
       title: "Water deeply, then leave it",

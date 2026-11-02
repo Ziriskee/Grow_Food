@@ -27,7 +27,7 @@ export const spearmint: Plant = {
   lifecycle: "Herbaceous perennial",
   featured: true,
   blurb:
-    "Will take over a bed through runners within two seasons. Almost always grown in a sunken pot for that reason, and almost never grown from seed, because seedlings vary wildly.",
+    "Will take over a bed through runners within two seasons. Almost always grown in a pot sunk into the ground for that reason, and almost never grown from seed, because seedlings vary wildly.",
   facts: {
     light: "Part shade to full sun",
     water: "Constant moisture; tolerates wet soil",
@@ -74,8 +74,8 @@ export const spearmint: Plant = {
       body: "Runners travel well beyond the planting hole within a single season. Pulling it out by hand rarely gets the whole runner, and each fragment regrows.",
     },
     {
-      title: "It hybridises with other mints",
-      body: "If you keep several mint types close together, seed from one will not come true to type, and the patch gradually becomes a mix.",
+      title: "It mixes with other mints",
+      body: "If you keep several mint types close together, seed from one grows into a mixed plant, not the kind you started with, and the patch gradually becomes a mix.",
     },
     {
       title: "Rust and mildew in still air",
@@ -89,7 +89,7 @@ export const spearmint: Plant = {
     },
     {
       plant: "Tomato",
-      why: "Mint fills the damp, shaded ground under tomato plants that you would otherwise be weeding, and it tolerates the watering the tomatoes need.",
+      why: "Mint fills the damp, shaded ground under tomato plants that you would otherwise have to weed, and it tolerates the watering the tomatoes need.",
     },
   ],
   avoid: [

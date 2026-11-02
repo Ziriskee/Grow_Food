@@ -27,14 +27,14 @@ export const tomato: Plant = {
   lifecycle: "Annual in most gardens; short-lived perennial in the tropics",
   featured: true,
   blurb:
-    "The most grown and most overwatered plant in the world. The plant may stop forming fruit when nights stay above about 24°C. Uneven watering causes more damage than any pest.",
+    "Probably the most overwatered plant in a garden. The plant may stop forming fruit when nights stay above about 24°C. Uneven watering causes more damage than any pest.",
   facts: {
     light: "Full sun, 6–8 hours",
     water: "Deep and steady, not daily sprinkling",
     soil: "Fertile, well drained, pH 6.0–6.8",
     spacing: "45–60 cm apart, 90 cm between rows",
     harvest: "60–85 days from transplanting",
-    habit: "Vining types need staking; bush types stand alone",
+    habit: "Climbing types need staking; bush types stand alone",
   },
   growing: [
     {
@@ -54,8 +54,8 @@ export const tomato: Plant = {
       body: "Drive the support in beside the seedling on day one. Adding a stake to a grown plant damages roots and the stems that are already heavy with fruit.",
     },
     {
-      title: "Water evenly and feed when the first fruits appear",
-      body: "Keep the soil evenly moist. Watering that swings between very dry and very wet can split fruit and cause blossom-end rot, a dark sunken spot at the bottom of the fruit. Start feeding with a fertilizer made for fruiting plants once the first fruits appear.",
+      title: "Water evenly, then feed at the first fruit",
+      body: "Keep the soil evenly moist. Watering that swings between very dry and very wet can split fruit and cause blossom-end rot — see the cautions below",
     },
     {
       title: "Pick when the colour starts to change",
@@ -69,7 +69,7 @@ export const tomato: Plant = {
     },
     {
       title: "A trap crop that earns its place",
-      body: "Hornworm and whitefly arrive on tomatoes first, which makes them easy to find and remove before they reach plants you check less often.",
+      body: "Hornworm and whitefly show up on tomatoes first, which makes them easy to find and remove before they reach plants you check less often.",
     },
     {
       title: "Flowers feed pollinators",
@@ -91,13 +91,13 @@ export const tomato: Plant = {
     },
     {
       title: "Late blight spreads fast",
-      body: "Late blight is a fast-spreading disease. In cool, wet weather, the crop can collapse within a week. Space plants so air can move, water at the base, and remove infected plants instead of trying to save them.",
+      body: "In cool, wet weather, the crop can collapse within a week. Space plants so air can move, water at the base, and remove infected plants instead of trying to save them.",
     },
   ],
   companions: [
     {
       plant: "Basil",
-      why: "A widely repeated pairing. The pest-deterrence evidence is thin, but the two want the same sun and water, and basil fills the gap between tomato stems usefully.",
+      why: "A widely repeated pairing. There is little evidence it actually deters pests, but the two want the same sun and water, and basil fills the gap between tomato stems usefully.",
     },
     {
       plant: "French marigold",
