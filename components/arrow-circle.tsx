@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/cn";
 
 export function ArrowCircle({ className }: { className?: string }) {
@@ -8,17 +9,11 @@ export function ArrowCircle({ className }: { className?: string }) {
         className,
       )}
     >
-      <svg
-        viewBox="0 0 16 16"
-        fill="none"
-        stroke="currentColor"
+      <ArrowUpRight
         strokeWidth={1.1}
-        strokeLinecap="round"
         aria-hidden="true"
         className="h-[0.85em] w-[0.85em]"
-      >
-        <path d="M4.5 11.5 11.5 4.5M6 4.5h5.5V10" />
-      </svg>
+      />
     </span>
   );
 }

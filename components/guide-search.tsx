@@ -10,6 +10,7 @@ import {
 } from "@/lib/categories";
 import { cn } from "@/lib/cn";
 import { SpecimenCard } from "./specimen-card";
+import { Search } from "lucide-react";
 
 const suggestions = ["tomato", "herb", "tropical", "mediterranean"];
 
@@ -85,18 +86,11 @@ export function GuideSearch({
         className="rounded-[2rem] bg-ink/[0.04] p-1.5 ring-1 ring-hairline transition-colors duration-500 ease-editorial focus-within:ring-clay/45"
       >
         <div className="flex items-center gap-3 rounded-[calc(2rem-0.375rem)] bg-paper-raised px-5 py-3">
-          <svg
-            viewBox="0 0 20 20"
-            fill="none"
-            stroke="currentColor"
+          <Search
             strokeWidth={1.1}
-            strokeLinecap="round"
             aria-hidden="true"
             className="h-4 w-4 shrink-0 text-ink-faint"
-          >
-            <circle cx="8.5" cy="8.5" r="5.5" />
-            <path d="m13 13 4 4" />
-          </svg>
+          />
 
           <label htmlFor={inputId} className="sr-only">
             Search plants by name, family, category or climate
@@ -192,7 +186,6 @@ export function GuideSearch({
               } “${query.trim()}”`
             : `${results?.length} ${noun} in the guide`}
         </p>
-
       </div>
 
       {results?.length > 0 ? (
