@@ -7,9 +7,9 @@ import { ThemeToggle } from "./theme-toggle";
 import Link from "next/link";
 
 const links = [
-  { href: "/plants", label: "Find a plant" },
+  { href: "/plants", label: "All plants" },
+  { href: "/states", label: "Nigerian states" },
   { href: "/#covers", label: "What's on a page" },
-  { href: "/#companions", label: "Combining" },
   { href: "/#stance", label: "How it's written" },
 ];
 
