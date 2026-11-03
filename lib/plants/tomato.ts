@@ -22,6 +22,51 @@ export const tomato: Plant = {
       src: "/images/plants/tomato/6.jpg",
     },
   ],
+  states: [
+    "plateau",
+    "kaduna",
+    "bauchi",
+    "kano",
+    "sokoto",
+    "kebbi",
+    "zamfara",
+    "jigawa",
+    "katsina",
+    "nasarawa",
+    "benue",
+    "gombe",
+    "taraba",
+  ],
+  varieties: [
+    {
+      name: "Roma VF",
+      description:
+        "Determinate, oblong, thick-walled. Long-standing processing type; vulnerable to bacterial wilt and late blight.",
+      type: "NASC-released",
+      source: "NIHORT",
+    },
+    {
+      name: "Ibadan Local",
+      description:
+        "Indeterminate landrace grown across the south; small fruit, tolerant of heat and local pest pressure.",
+      type: "Landrace",
+      source: "IITA / NIHORT",
+    },
+    {
+      name: "Plato F1",
+      description:
+        "Hybrid with TYLCV resistance; grown under irrigation on the Jos Plateau and in the northern dry season.",
+      type: "NASC-released",
+      source: "East-West Seed",
+    },
+    {
+      name: "UC82B",
+      description:
+        "Determinate, widely used for dry-season irrigated production in the north; firm fruit, good for transport.",
+      type: "NASC-released",
+      source: "NIHORT / commercial",
+    },
+  ],
   zones: ["Temperate", "Subtropical", "Mediterranean"],
   difficulty: "Moderate",
   lifecycle: "Annual in most gardens; short-lived perennial in the tropics",

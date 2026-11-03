@@ -22,6 +22,38 @@ export const flutedPumpkin: Plant = {
       src: "/images/plants/fluted-pumpkin/6.jpg",
     },
   ],
+  states: [
+    "enugu",
+    "anambra",
+    "imo",
+    "abia",
+    "ebonyi",
+    "delta",
+    "rivers",
+    "akwa-ibom",
+    "cross-river",
+    "bayelsa",
+    "edo",
+    "lagos",
+    "ogun",
+    "oyo",
+  ],
+  varieties: [
+    {
+      name: "Ugu (general)",
+      description:
+        "The standard Nigerian fluted pumpkin. Landrace seed saved from mature pods; male and female plants segregate roughly 1:1.",
+      type: "Landrace",
+      source: "NIHORT production guide",
+    },
+    {
+      name: "NGB01177",
+      description:
+        "A named NIHORT accession selected for leaf yield; used in on-station trials. Not widely available to growers yet.",
+      type: "NASC-released",
+      source: "NIHORT / NACGRAB",
+    },
+  ],
   zones: ["Tropical"],
   difficulty: "Moderate",
   lifecycle: "Perennial vine grown as an annual for leaves, or kept for seed",
