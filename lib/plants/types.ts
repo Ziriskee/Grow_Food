@@ -41,6 +41,16 @@ export type PlantImage = {
   credit?: string;
 };
 
+export type PlantVariety = {
+  /** NASC-released name where known; landrace otherwise, labelled. */
+  name: string;
+  description: string;
+  /** "NASC-released" or "Landrace" */
+  type: "NASC-released" | "Landrace";
+  /** Where or who released/records it. */
+  source: string;
+};
+
 export type Plant = {
   slug: string;
   name: string;
@@ -53,7 +63,10 @@ export type Plant = {
   lifecycle: string;
   blurb: string;
   featured: boolean;
-
+  /** Nigerian states where this plant is reliably grown. */
+  states?: string[];
+  /** Named varieties available to Nigerian growers. */
+  varieties?: PlantVariety[];
   facts: {
     light: string;
     water: string;
@@ -62,15 +75,11 @@ export type Plant = {
     harvest: string;
     habit: string;
   };
-
   growing: GrowingStage[];
   benefits: Note[];
   cautions: Note[];
   companions: Pairing[];
   avoid: Pairing[];
-
-  /** `null` when there is no traditional-use record worth repeating. */
   traditional: TraditionalUse | null;
-
   reviewedAt: string;
 };
