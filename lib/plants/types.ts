@@ -45,8 +45,8 @@ export type PlantVariety = {
   /** NASC-released name where known; landrace otherwise, labelled. */
   name: string;
   description: string;
-  /** "NASC-released" or "Landrace" */
-  type: "NASC-released" | "Landrace";
+  /** How the name came to be in Nigerian hands. */
+  type: "NASC-released" | "Landrace" | "Introduced";
   /** Where or who released/records it. */
   source: string;
 };
@@ -65,6 +65,8 @@ export type Plant = {
   featured: boolean;
   /** Nigerian states where this plant is reliably grown. */
   states?: string[];
+  /** One honest line on where this plant fits in Nigeria. */
+  nigeriaNote?: string;
   /** Named varieties available to Nigerian growers. */
   varieties?: PlantVariety[];
   facts: {

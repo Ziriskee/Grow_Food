@@ -22,6 +22,18 @@ export const spearmint: Plant = {
       src: "/images/plants/spearmint/6.jpg",
     },
   ],
+  states: ["plateau", "kaduna", "fct", "lagos", "enugu", "rivers", "edo"],
+  varieties: [
+    {
+      name: "Local spearmint",
+      description:
+        "Passed between growers as cuttings and runners; no registered varieties exist in Nigeria.",
+      type: "Landrace",
+      source: "Grower-maintained",
+    },
+  ],
+  nigeriaNote:
+    "Mint survives in southern gardens only where moisture is constant, and thrives on the Plateau. Most growers keep it in pots or sunken containers rather than open beds.",
   zones: ["Temperate", "Subtropical"],
   difficulty: "Easy",
   lifecycle: "Herbaceous perennial",

@@ -1,4 +1,6 @@
 import { basil } from "./basil";
+import { cassava } from "./cassava";
+import { ewedu } from "./ewedu";
 import { flutedPumpkin } from "./fluted-pumpkin";
 import { lavender } from "./lavender";
 import { maize } from "./maize";
@@ -7,6 +9,7 @@ import { rosemary } from "./rosemary";
 import { spearmint } from "./spearmint";
 import { tomato } from "./tomato";
 import type { Plant } from "./types";
+import { yam } from "./yam";
 
 /**
  * Site order, not alphabetical. The hero now selects plants by stable slug,
@@ -21,6 +24,9 @@ export const plants: Plant[] = [
   rosemary,
   okra,
   lavender,
+  cassava,
+  yam,
+  ewedu,
 ];
 
 export const featuredPlants = plants.filter((plant) => plant.featured);

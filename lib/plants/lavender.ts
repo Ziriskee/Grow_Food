@@ -22,6 +22,8 @@ export const lavender: Plant = {
       src: "/images/plants/lavender/6.jpg",
     },
   ],
+  nigeriaNote:
+    "Lavender is not reliably grown in Nigeria. Its needs — lean alkaline soil, dry air, cool nights — match almost no Nigerian zone, and even Jos Plateau humidity is usually too high. Treat any Nigerian lavender as a container experiment, not a crop.",
   zones: ["Mediterranean", "Temperate", "Arid"],
   difficulty: "Moderate",
   lifecycle: "Woody evergreen subshrub, short lived",

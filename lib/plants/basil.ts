@@ -14,6 +14,42 @@ export const basil: Plant = {
     { src: "/images/plants/basil/5.jpg" },
     { src: "/images/plants/basil/6.jpg" },
   ],
+  states: [
+    "lagos",
+    "ogun",
+    "oyo",
+    "osun",
+    "edo",
+    "delta",
+    "rivers",
+    "enugu",
+    "anambra",
+    "imo",
+    "abia",
+    "akwa-ibom",
+    "cross-river",
+    "plateau",
+    "kaduna",
+    "fct",
+  ],
+  varieties: [
+    {
+      name: "Local sweet basil",
+      description:
+        "Seed saved in home and market gardens. No NASC-released basil list exists yet, so every packet is effectively a landrace.",
+      type: "Landrace",
+      source: "Grower-maintained",
+    },
+    {
+      name: "Purple and lemon-scented types",
+      description:
+        "Occasional introduced ornamental-culinary types in urban nurseries; not registered and not stable from seed.",
+      type: "Introduced",
+      source: "Nursery stock",
+    },
+  ],
+  nigeriaNote:
+    "Basil is not a traditional Nigerian crop. It does well in southern home gardens and on the Jos Plateau, and fails in the hot dry north without shade and steady water.",
   zones: ["Tropical", "Subtropical", "Temperate"],
   difficulty: "Easy",
   lifecycle: "Tender annual; behaves as a short-lived perennial in the tropics",

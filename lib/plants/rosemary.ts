@@ -22,6 +22,18 @@ export const rosemary: Plant = {
       src: "/images/plants/rosemary/6.jpg",
     },
   ],
+  states: ["plateau", "kaduna", "fct", "lagos", "enugu"],
+  varieties: [
+    {
+      name: "Nursery rosemary",
+      description:
+        "Cutting-propagated stock introduced from Mediterranean cultivars and sold in urban nurseries; rarely labelled to a named variety.",
+      type: "Introduced",
+      source: "Nursery stock",
+    },
+  ],
+  nigeriaNote:
+    "Rosemary is an introduced Mediterranean herb. It persists on the Jos Plateau and in southern containers with sharp drainage; open-ground humidity usually kills it within a season or two.",
   zones: ["Mediterranean", "Temperate", "Subtropical"],
   difficulty: "Moderate",
   lifecycle: "Woody evergreen perennial",

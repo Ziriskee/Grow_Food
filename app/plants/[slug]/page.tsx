@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNav } from "@/components/site-nav";
 import { getPlant, plants } from "@/lib/plants";
 import { PlantImage } from "@/components/plant-image";
+import { PlantStateChip } from "@/components/plant-state-chip";
 
 type PlantPageProps = {
   params:
@@ -146,6 +146,43 @@ export default async function PlantPage({ params }: PlantPageProps) {
               </div>
             ))}
           </dl>
+
+          {plant.states?.length || plant.nigeriaNote ? (
+            <section className="mt-16" aria-labelledby="plant-states">
+              <h2
+                id="plant-states"
+                className="font-display text-3xl tracking-[-0.02em] text-ink"
+              >
+                Where it fits in Nigeria
+              </h2>
+
+              {plant.states && plant.states.length > 0 ? (
+                <>
+                  <p className="mt-3 max-w-[70ch] text-[0.9375rem] leading-relaxed text-ink-soft">
+                    {plant.states.length} states record this crop as reliably
+                    growable. Tap any state to see its climate, soil and
+                    planting window.
+                  </p>
+
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {plant.states.map((slug) => (
+                      <PlantStateChip key={slug} slug={slug} />
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <p className="mt-3 max-w-[70ch] text-[0.9375rem] leading-relaxed text-ink-soft">
+                  No Nigerian state records this plant as reliably growable yet.
+                </p>
+              )}
+
+              {plant.nigeriaNote ? (
+                <p className="mt-6 max-w-[70ch] rounded-[1.5rem] bg-ink/[0.035] p-5 text-[0.9375rem] leading-relaxed text-ink-soft ring-1 ring-hairline">
+                  {plant.nigeriaNote}
+                </p>
+              ) : null}
+            </section>
+          ) : null}
 
           <section className="mt-16" aria-labelledby="growing">
             <h2
