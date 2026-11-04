@@ -1,9 +1,11 @@
 import { basil } from "./basil";
 import { cassava } from "./cassava";
+import { egusi } from "./egusi";
 import { ewedu } from "./ewedu";
 import { flutedPumpkin } from "./fluted-pumpkin";
 import { lavender } from "./lavender";
 import { maize } from "./maize";
+import { ogbono } from "./ogbono";
 import { okra } from "./okra";
 import { rosemary } from "./rosemary";
 import { spearmint } from "./spearmint";
@@ -27,6 +29,8 @@ export const plants: Plant[] = [
   cassava,
   yam,
   ewedu,
+  egusi,
+  ogbono,
 ];
 
 export const featuredPlants = plants.filter((plant) => plant.featured);
