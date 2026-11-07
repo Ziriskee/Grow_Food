@@ -83,7 +83,7 @@ export function GuideSearch({
       <form
         role="search"
         onSubmit={(event) => event.preventDefault()}
-        className="rounded-[2rem] bg-ink/[0.04] p-1.5 ring-1 ring-hairline transition-colors duration-500 ease-editorial focus-within:ring-clay/45"
+        className="rounded-[2rem] bg-ink/4 p-1.5 ring-1 ring-hairline transition-colors duration-500 ease-editorial focus-within:ring-clay/45"
       >
         <div className="flex items-center gap-3 rounded-[calc(2rem-0.375rem)] bg-paper-raised px-5 py-3">
           <Search

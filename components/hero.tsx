@@ -9,11 +9,11 @@ export function Hero() {
     <section id="top" className="relative overflow-hidden">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-48 -top-56 h-[38rem] w-[38rem] rounded-full bg-[radial-gradient(circle_at_center,rgba(44,64,48,0.12),transparent_62%)]"
+        className="pointer-events-none absolute -right-48 -top-56 h-152 w-152 rounded-full bg-[radial-gradient(circle_at_center,rgba(44,64,48,0.12),transparent_62%)]"
       />
 
-      <div className="relative mx-auto grid w-full max-w-[1340px] gap-14 px-5 pt-14 sm:px-8 md:pt-20 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-10 lg:pt-24">
-        <div className="max-w-[35rem]">
+      <div className="relative mx-auto grid w-full max-w-335 gap-14 px-5 pt-14 sm:px-8 md:pt-20 lg:grid-cols-2 lg:items-center lg:gap-10 lg:pt-18">
+        <div className="max-w-140">
           <Reveal>
             <p className="inline-flex items-center gap-2 rounded-full border border-hairline px-3 py-1 text-[0.625rem] uppercase tracking-[0.2em] text-ink-soft">
               <span

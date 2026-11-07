@@ -63,7 +63,7 @@ export function SpecimenPager({ plants }: SpecimenPagerProps) {
 
   return (
     <div
-      className="relative mx-auto w-full max-w-80 "
+      className="relative mx-auto w-full h-full mb-28 max-w-90 max-h-150 max-lg:hidden "
       onPointerEnter={() => setPaused(true)}
       onPointerLeave={() => setPaused(false)}
       onFocusCapture={() => setPaused(true)}
@@ -104,7 +104,7 @@ export function SpecimenPager({ plants }: SpecimenPagerProps) {
       </div>
 
       {count > 1 ? (
-        <div className="mt-6 flex items-center justify-center gap-4">
+        <div className=" flex items-center justify-center gap-4">
           <button
             type="button"
             onClick={() => go(index - 1)}

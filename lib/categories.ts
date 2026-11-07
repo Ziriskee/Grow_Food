@@ -4,7 +4,8 @@ export type PlantCategorySlug =
   | "fruiting-vegetables"
   | "cereals-grains"
   | "roots-tubers"
-  | "fruits-trees";
+  | "fruits-trees"
+  | "bulb-vegetables"
 
 export type PlantCategory = {
   slug: PlantCategorySlug;
@@ -45,6 +46,11 @@ export const plantCategories: PlantCategory[] = [
     description:
       "Trees and tree crops grown for their fruit, seeds, and the harvest they carry for years.",
   },
+  {
+    slug: "bulb-vegetables",
+    name: "Bulb vegetables",
+    description: "Plants grown for their swollen underground bulbs.",
+  },
 ];
 
 const legacyCategoryToSlug: Record<string, PlantCategorySlug> = {
@@ -73,6 +79,10 @@ const legacyCategoryToSlug: Record<string, PlantCategorySlug> = {
   "fruits & tree": "fruits-trees",
   "fruits & trees": "fruits-trees",
   "fruits and trees": "fruits-trees",
+  bulb: "bulb-vegetables",
+  bulbs: "bulb-vegetables",
+  "bulb vegetable": "bulb-vegetables",
+  "bulb vegetables": "bulb-vegetables",
 };
 
 export function getCategorySlug(

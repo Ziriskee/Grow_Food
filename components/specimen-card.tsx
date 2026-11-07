@@ -24,7 +24,7 @@ const leadImage = plant.images?.[0];
         className,
       )}
     >
-      <article className="flex h-full flex-col rounded-[calc(1.75rem-0.375rem)] bg-paper-raised p-6 shadow-[inset_0_1px_0_var(--pg-inset)]">
+      <article className="flex h-full flex-col rounded-[1.375rem] bg-paper-raised p-6 shadow-[inset_0_1px_0_var(--pg-inset)]">
         {leadImage ? (
           <PlantImage
             image={leadImage}
@@ -58,7 +58,7 @@ const leadImage = plant.images?.[0];
           {plant.latin}
         </p>
 
-        <p className="mt-4 text-[0.9375rem] leading-relaxed text-ink-soft">
+        <p className="my-4 text-[0.9375rem] leading-relaxed text-ink-soft line-clamp-5">
           {plant.blurb}
         </p>
 
